@@ -1,4 +1,4 @@
-public abstract class Funcion {
+public abstract class Funcion extends FuncionBisec {
     //Variables
     protected static final double TOLERANCIA = 0.0001;
 

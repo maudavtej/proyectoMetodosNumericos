@@ -10,9 +10,9 @@ public class MetodoBiseccion {
     }
     //============================================================================================
     public void biseccion(int n,double a, double b){
-        FuncionBisec[] ejemplos = new FuncionBisec[2];
-        ejemplos[0]=new Ej1Biseccion();
-        ejemplos[1]=new Ej2Biseccion();
+        Funcion[] ejemplos = new Funcion[2];
+        ejemplos[0]=new Ejemplo3();
+        ejemplos[1]=new Ejemplo4();
         if (n<0||n>=ejemplos.length){
             throw new IllegalArgumentException("Elige un ejemplo válido");
         }

@@ -1,3 +1,5 @@
+package Raices;
+
 public class MetodoNewton {
 
     private static final int MAX_ITERACIONES = 100;

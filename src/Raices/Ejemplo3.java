@@ -1,6 +1,10 @@
-public class Ejemplo3 extends Funcion{
+package Raices;
+
+public class Ejemplo3 extends Funcion {
+
     private String funcion1= "f(x)= 3x-e^x";
     private String derivada = "f'(x)=2-e^x";
+
     @Override
     public String getFuncionStr() {
         return funcion1;

@@ -1,3 +1,5 @@
+package Raices;
+
 public class MetodoSecante {
 
     private static final int MAX_ITERACIONES = 100;

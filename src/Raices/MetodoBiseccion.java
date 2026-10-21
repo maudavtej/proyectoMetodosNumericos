@@ -1,3 +1,5 @@
+package Raices;
+
 public class MetodoBiseccion {
     public static final int MAX_ITERACIONES=100;//================================================================================================
     //DESCRIPCION
@@ -37,14 +39,6 @@ public class MetodoBiseccion {
             f_a = (f_a * f_c > 0) ? f_c : f_a;
             b = (f_b * f_c > 0) ? c : b;
             f_b = (f_b * f_c > 0) ? f_c : f_b;
-        }while (Math.abs(f_c)> Funcion.TOLERANCIA&& iteraciones<MAX_ITERACIONES);
-
-
-
-
-
-
-
-
-
-}}
+        }while (Math.abs(f_c)> Funcion.TOLERANCIA && iteraciones<MAX_ITERACIONES);
+    }
+}

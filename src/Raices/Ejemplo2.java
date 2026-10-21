@@ -1,12 +1,12 @@
-public class Ejemplo2 extends Funcion{
+package Raices;
+
+public class Ejemplo2 extends Funcion {
+
     private final String funcionStr = "f(x) = Ln(x) + (e^-x) - 0.5";
     private final String derivadaStr = "f´(x) = (1/x) - (e^-x)";
 
     @Override
-    //Getters
-    public String getFuncionStr() {
-        return funcionStr;
-    }
+    public String getFuncionStr() {return funcionStr;}
     @Override
     public String getDerivadaStr() {
         return derivadaStr;

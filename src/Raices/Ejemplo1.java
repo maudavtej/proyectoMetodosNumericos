@@ -1,3 +1,5 @@
+package Raices;
+
 public class Ejemplo1 extends Funcion {
 
     private String funcionStr = "f(x) = (x^2)-(e^x)-3x+2";

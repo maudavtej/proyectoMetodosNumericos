@@ -38,8 +38,12 @@ public abstract class Funcion {
         return true;
     }
 //
-    public String variables(){
-        return String.join(", ", variables);
+//CREAR MATRIZ
+    public double[][] creaMatriz(int tamanio){
+        if (tamanio<=0||tamanio>MAX_ECUACIONES){
+            throw new IllegalArgumentException("Verifique el manaño ingresado, el númeor máximo de ecuaciones es "+ MAX_ECUACIONES);
+        }
+        return new double[tamanio][tamanio];
     }
 
     public int n(){return coeficientes.length;}
@@ -53,6 +57,25 @@ public abstract class Funcion {
         }
         return true;
     }
+//LLENAR MATRIZ
+    public static double[][] llenarFila(double[][]matrizP, double[] coef, int indice){
+        if (indice>0||indice>=matrizP.length)throw new IllegalArgumentException("La fila está fuera de rango "+ indice);
+        if (coef.length!=matrizP[indice].length){
+            throw new IllegalArgumentException("La fila debe tener "+ matrizP[indice].length);
+        }
+        return matrizP;
+    }
 
-
+    //LLENAR LA MATRIZ
+    public static double[][] llenarMatriz(double[][] matrizP, double[][] filas) {
+        if (filas.length > matrizP.length) {
+            throw new IllegalArgumentException("Hay más filas que espacio en la matriz");
+        }
+        for (int i = 0; i < filas.length; i++) {
+            llenarFila(matrizP, filas[i], i);
+        }
+        return matrizP;
+    }
 }
+
+

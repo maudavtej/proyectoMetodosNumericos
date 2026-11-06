@@ -1,51 +1,92 @@
 package Matrices;
 
+import java.util.Scanner;
+
 public class Gauss {
 
-    public static void pivotearFilas(double[][] m, double[] b) {
-        int n = m.length;
-        for (int k = 0; k < n; k++) {
-            int max = k;
-            for (int i = k + 1; i < n; i++) {
-                if (Math.abs(m[i][k]) > Math.abs(m[max][k])) max = i;
-            }
-            if (max != k) {
-                double[] tmpFila = m[k];
-                m[k] = m[max];
-                m[max] = tmpFila;
+    public static void gauss(double[][] matrizInput) {
 
-                double tmpB = b[k];
-                b[k] = b[max];
-                b[max] = tmpB;
+        //Copia de valores en otra variable
+        Matriz matriz = new Matriz();
+        Matriz matrizOriginal = new Matriz();
+        int n = matrizInput.length;
+        matriz.definirTamanioMatriz(n);
+        matrizOriginal.definirTamanioMatriz(n);
+
+        for(int i = 0; i < n; i++){
+            matriz.llenarMatriz(matrizInput[i],i);
+            matrizOriginal.llenarMatriz(matrizInput[i],i);
+        }
+
+        double[][] matrizAux = matriz.getMatriz();
+        double[] vectorSolucion = new double[n];
+
+        for (int contador = 0; contador < n; contador++){
+            matriz.pivoteoParcial(contador);
+            for (int fila = contador + 1; fila < n; fila++) {
+                matriz.restaFilas(fila, contador, matrizAux[fila][contador]);
             }
         }
-    }
 
-    public static void pivotearColumnas(double[][] m, String[] vars) {
-        int n = m.length;
-        for (int k = 0; k < n; k++) {
-            int max = k;
-            for (int j = k + 1; j < n; j++) {
-                if (Math.abs(m[k][j]) > Math.abs(m[k][max])) max = j;
-            }
-            if (max != k) {
-                for (int i = 0; i < n; i++) {   // intercambia la columna en todas las filas
-                    double t = m[i][k];
-                    m[i][k] = m[i][max];
-                    m[i][max] = t;
+        //Sustitucion
+        for (int fila = n- 1; fila >= 0; fila--) {
+            for (int columna = 0; columna < n; columna++) {
+                //Asigna el primer valor del vector solucion
+                if (fila == columna && fila == n - 1) {
+                    vectorSolucion[n - 1] = matrizAux[fila][columna + 1];
                 }
-                String tv = vars[k];
-                vars[k] = vars[max];
-                vars[max] = tv;
+                if (fila < columna) {
+                    //Multuplicamos el valor por la incognita
+                    matrizAux[fila][columna] *= vectorSolucion[columna];
+                    //La pasamos del otro lado de la igualdad y la operamos con el valor que este ahi
+                    matrizAux[fila][n] += matrizAux[fila][columna] * -1;
+                }
+                vectorSolucion[fila] = matrizAux[fila][n];
             }
+        }
+
+        String sistemaStr = "";
+        String matrizAumentadaStr = "";
+        sistemaStr = matrizOriginal.toString();
+        matrizAumentadaStr = matrizOriginal.toStringMatrizAumentada();
+
+        //Sistema de ecucacioens
+        System.out.println("Sistema de ecuaciones: \n"+sistemaStr);
+        //Matriz aumentada:
+        System.out.println("Matriz aumentada: \n"+matrizAumentadaStr);
+
+        //Resultado
+        System.out.println("Vector solucion: ");
+        for (int i = 0; i < n; i++) {
+            System.out.println(Matriz.INCOGNITAS[i] + " = " + vectorSolucion[i]);
         }
     }
 
-    public static double[][] resolucion(Funcion f) {
-        double[][] matrizG = f.getMatriz();
-        double[] coefG = f.getCoeficientes();
-        pivotearFilas(matrizG, coefG);
-        return matrizG;
-    }
+    public static void main(){
+        Scanner leer = new Scanner(System.in);
 
+        int n;
+        double[][] matriz;
+
+        //Se define tamaño matriz
+        System.out.print("Ingrese tamaño matriz: ");
+        n = leer.nextInt();
+
+        matriz = new double[n][n + 1];;
+
+        //Llenado matriz
+        for (int i = 0; i < n; i++){
+            for(int j = 0; j <= n; j++){
+                if(j < n){
+                    System.out.print("Ingrese a"+i+","+j+": ");
+                    matriz[i][j] = leer.nextFloat();
+                }else{
+                    System.out.print("Ingrese b"+i+": ");
+                    matriz[i][j] = leer.nextFloat();
+                }
+            }
+        }
+
+        gauss(matriz);
+    }
 }

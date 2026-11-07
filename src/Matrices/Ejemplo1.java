@@ -1,6 +1,6 @@
 package Matrices;
 
-public class Ejemplo1 extends Funcion {
+public class Ejemplo1{
 
 
 }

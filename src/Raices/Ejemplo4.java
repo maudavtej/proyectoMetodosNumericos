@@ -2,8 +2,8 @@ package Raices;
 
 public class Ejemplo4 extends Funcion {
 
-    private String funcion2 = "f(x)= x^3-xe^x^2+3";
-    private String derivada2 = "f'(x)=3x^2-e^x^2+2xe^x";
+    private String funcion2 = "f(x)= x^3 - xe^x^2 + 3";
+    private String derivada2 = "f'(x)=3x^2 - e^x^2 + 2xe^x";
 
     @Override
     public String getFuncionStr(){
@@ -20,6 +20,13 @@ public class Ejemplo4 extends Funcion {
     @Override
     public double calcularValorDerivada(double a){
         return 3*Math.pow(a,2)-Math.exp(Math.pow(a,2))+2*a*Math.exp(a);
+    }
+
+    public static String toStringFunc(){
+        return "f(x) = x<sup>3</sup> - xe<sup>x<sup>2</sup></sup> + 3";
+    }
+    public static String toStringDer(){
+        return "f′(x) = 3x<sup>2</sup> - e<sup>x<sup>2</sup></sup> + 2xe<sup>x</sup>";
     }
 
 }

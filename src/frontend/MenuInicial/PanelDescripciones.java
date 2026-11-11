@@ -130,4 +130,12 @@ public class PanelDescripciones extends JPanel{
         numMetodo = (numMetodo - 1 + titulos.length) % titulos.length;
         actualizarTexto();
     }
+
+    //Getters
+    public JButton getBtnSeleccion() {
+        return btnSeleccion;
+    }
+    public int getNumMetodo() {
+        return numMetodo;
+    }
 }

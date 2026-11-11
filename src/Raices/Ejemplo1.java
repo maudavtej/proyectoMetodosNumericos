@@ -1,7 +1,6 @@
 package Raices;
 
 public class Ejemplo1 extends Funcion {
-
     private String funcionStr = "f(x) = (x^2)-(e^x)-3x+2";
     private String derivadaStr = "f´(x) = 2x-(e^x)-3";
 
@@ -20,5 +19,14 @@ public class Ejemplo1 extends Funcion {
     @Override
     public double calcularValorDerivada(double a){
         return (2 * a) - Math.exp(a) - 3;
+    }
+
+
+    public static String toStringFunc(){
+        return "f(x) = x<sup>2</sup> - e<sup>x</sup> - 3x + 2";
+    }
+    //Asi estaba antes
+    public static String toStringDer(){
+        return "f(x) = 2x - e<sup>x</sup> - 3";
     }
 }

@@ -19,4 +19,11 @@ public class Ejemplo2 extends Funcion {
     public double calcularValorDerivada(double a){
         return (1.0/a) - Math.exp(-a);
     }
+
+    public static String toStringFunc(){
+        return "f(x) = Ln(x) + e<sup>-x</sup> - 0.5";
+    }
+    public static String toStringDer(){
+        return "f′(x) = (1/x) - e<sup>-x</sup>";
+    }
 }

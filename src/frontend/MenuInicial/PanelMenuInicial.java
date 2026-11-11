@@ -127,14 +127,11 @@
             panelInfo.setPreferredSize(new Dimension(800, 130));
             panelInfo.setMaximumSize(new Dimension(Integer.MAX_VALUE, 130));
 
-            // La descripcion absorbe el espacio sobrante de la ventana
             panelDescripcion.setPreferredSize(new Dimension(800, 350));
             panelDescripcion.setMaximumSize(new Dimension(Integer.MAX_VALUE, Integer.MAX_VALUE));
 
             panelBoton.setPreferredSize(new Dimension(800, 129));
             panelBoton.setMaximumSize(new Dimension(Integer.MAX_VALUE, 129));
-
-            //Acciones botones
         }
 
         public JButton getBtnContinuar() {

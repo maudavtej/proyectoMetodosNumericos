@@ -18,8 +18,15 @@ public class Ejemplo3 extends Funcion {
         return 3* a - Math.exp(a);
     }
     @Override
-    public  double calcularValorDerivada(double a){
+    public double calcularValorDerivada(double a){
         return 2-Math.exp(a);
+    }
+
+    public static String toStringFunc(){
+        return "f(x) = 3x - e<sup>x</sup>";
+    }
+    public static String toStringDer(){
+        return "f′(x) = 2 - e<sup>-x</sup>";
     }
 
 }

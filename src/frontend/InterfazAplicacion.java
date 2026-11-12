@@ -3,10 +3,10 @@ package frontend;
 import frontend.MenuInicial.*;
 import frontend.PanelesMetodos.PanelBiseccion;
 import frontend.PanelesMetodos.PanelNewton;
+import frontend.PanelesMetodos.PanelSecante;
 
 import javax.swing.*;
-import java.awt.BorderLayout;
-import java.awt.CardLayout;
+import java.awt.*;
 
 public class InterfazAplicacion extends JFrame {
 
@@ -15,6 +15,7 @@ public class InterfazAplicacion extends JFrame {
     //String para los metodos
     private static final String BISECCION = "BISECCION";
     private static final String NEWTON = "NEWTON";
+    private static final String SECANTE = "SECANTE";
 
     private CardLayout cardLayout;
     private JPanel contenedor;
@@ -23,6 +24,7 @@ public class InterfazAplicacion extends JFrame {
     //Metodos
     private PanelBiseccion panelBiseccion = new PanelBiseccion();
     private PanelNewton panelNewton = new PanelNewton();
+    private PanelSecante panelSecante = new PanelSecante();
 
     public InterfazAplicacion(){
         setTitle("Metodos Numericos I");
@@ -41,6 +43,7 @@ public class InterfazAplicacion extends JFrame {
         contenedor.add(panelDescripciones, DESCRIPCIONES);
         contenedor.add(panelBiseccion,BISECCION);
         contenedor.add(panelNewton,NEWTON);
+        contenedor.add(panelSecante,SECANTE);
 
         add(contenedor, BorderLayout.CENTER);
 
@@ -50,6 +53,7 @@ public class InterfazAplicacion extends JFrame {
         //Botones SALIR de los metodos
         panelBiseccion.getBtnSalir().addActionListener(e -> cardLayout.show(contenedor,DESCRIPCIONES));
         panelNewton.getBtnSalir().addActionListener(e -> cardLayout.show(contenedor,DESCRIPCIONES));
+        panelSecante.getBtnSalir().addActionListener(e ->cardLayout.show(contenedor,DESCRIPCIONES));
     }
 
     public String seleccionMetodo(){
@@ -60,6 +64,9 @@ public class InterfazAplicacion extends JFrame {
                 break;
             case 2:
                 metodoSeleccionado = NEWTON;
+                break;
+            case 3:
+                metodoSeleccionado = SECANTE;
                 break;
             default:
                 JOptionPane.showMessageDialog(null,"ERROR INTENTE DE NUEVO");

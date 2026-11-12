@@ -1,24 +1,27 @@
 package Raices;
 
+import java.util.ArrayList;
+
 public class MetodoSecante {
 
     private static final int MAX_ITERACIONES = 100;
     private String descripcionFuncion;
+    private double fxn_1 = 0;
+    private double fxn = 0;
+    private double xn_1 = 0;
+    private double xn = 0;
+    private double siguienteX =0;
 
-    public void secante(int n,double valorInicial1, double valorInicial2){
-        double fxn_1 = 0;
-        double fxn = 0;
-        double xn_1 = 0;
-        double xn = 0;
-        double siguienteX =0;
+    ArrayList<double[]> tablaCompleta = new ArrayList<>();
 
-        Funcion[] ejemplos = new Funcion[2];
+    public ArrayList<double[]> secante(int n,double valorInicial1, double valorInicial2){
+        Funcion[] ejemplos = new Funcion[4];
         ejemplos[0] = new Ejemplo1();
         ejemplos[1] = new Ejemplo2();
+        ejemplos[2] = new Ejemplo3();
+        ejemplos[3] = new Ejemplo4();
 
         int iteraciones = 1;
-
-        descripcionFuncion = ejemplos[n].getFuncionStr();
 
         do{
             if(iteraciones == 1){
@@ -26,10 +29,12 @@ public class MetodoSecante {
                 xn = valorInicial2;
                 fxn_1 = ejemplos[n].calcularValorFuncion(xn_1);
                 fxn = 0;
+                tablaCompleta.add(new double[]{xn_1,fxn_1});
                 iteraciones++;
                 continue;
             } else if (iteraciones == 2) {
                 fxn = ejemplos[n].calcularValorFuncion(xn);
+                tablaCompleta.add(new double[]{xn,fxn});
                 iteraciones++;
                 continue;
             }
@@ -46,11 +51,19 @@ public class MetodoSecante {
             xn = siguienteX;
             fxn = ejemplos[n].calcularValorFuncion(xn);
 
+            tablaCompleta.add(new double[]{xn,fxn});
+
             iteraciones++;
         }while((Math.abs(ejemplos[n].calcularValorFuncion(xn)) > Funcion.TOLERANCIA) && (iteraciones < MAX_ITERACIONES));
+
+        return tablaCompleta;
     }
 
     public double calcularXn_1(double xn,double xn_1,double fxn, double fxn_1){
         return xn - (fxn * (xn - xn_1)/ (fxn - fxn_1));
+    }
+
+    public double getXn() {
+        return xn;
     }
 }

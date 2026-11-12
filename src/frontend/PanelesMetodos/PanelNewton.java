@@ -186,7 +186,6 @@ public class PanelNewton extends JPanel{
 
         panelOpciones.setPreferredSize(new Dimension(800,70));
         panelOpciones.setMaximumSize(new Dimension(Integer.MAX_VALUE,70));
-
     }
 
     //Acciones de los botones

@@ -37,6 +37,7 @@ public class PanelBiseccion extends JPanel{
     private ArrayList<String[]> tablaFormat;
     private String solucionStrFormat;
 
+    //Constructor
     public PanelBiseccion(){
         setLayout(new BorderLayout());
         TitledBorder border = BorderFactory.createTitledBorder("");

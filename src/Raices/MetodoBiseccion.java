@@ -14,9 +14,11 @@ public class MetodoBiseccion {
     //Metodo Biseccion
     public ArrayList<double[]> biseccion(int n,double a, double b){
         //Ejemplos disponibles
-        Funcion[] ejemplos = new Funcion[2];
-        ejemplos[0]=new Ejemplo1();
-        ejemplos[1]=new Ejemplo2();
+        Funcion[] ejemplos = new Funcion[4];
+        ejemplos[0] = new Ejemplo1();
+        ejemplos[1] = new Ejemplo2();
+        ejemplos[2] = new Ejemplo3();
+        ejemplos[3] = new Ejemplo4();
 
         if (n<0||n>=ejemplos.length){
             throw new IllegalArgumentException("Elige un ejemplo válido");

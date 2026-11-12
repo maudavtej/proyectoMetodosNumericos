@@ -2,6 +2,7 @@ package frontend;
 
 import frontend.MenuInicial.*;
 import frontend.PanelesMetodos.PanelBiseccion;
+import frontend.PanelesMetodos.PanelNewton;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
@@ -13,13 +14,15 @@ public class InterfazAplicacion extends JFrame {
     private static final String DESCRIPCIONES = "DESCRIPCIONES";
     //String para los metodos
     private static final String BISECCION = "BISECCION";
+    private static final String NEWTON = "NEWTON";
 
     private CardLayout cardLayout;
     private JPanel contenedor;
-    private PanelMenuInicial panelMenuInicial;
-    private PanelDescripciones panelDescripciones;
+    private PanelMenuInicial panelMenuInicial = new PanelMenuInicial();
+    private PanelDescripciones panelDescripciones = new PanelDescripciones();
     //Metodos
-    private PanelBiseccion panelBiseccion;
+    private PanelBiseccion panelBiseccion = new PanelBiseccion();
+    private PanelNewton panelNewton = new PanelNewton();
 
     public InterfazAplicacion(){
         setTitle("Metodos Numericos I");
@@ -33,15 +36,11 @@ public class InterfazAplicacion extends JFrame {
         cardLayout = new CardLayout();
         contenedor = new JPanel(cardLayout);
 
-        panelMenuInicial = new PanelMenuInicial();
-        panelDescripciones = new PanelDescripciones();
-        //Paneles de los metodos
-        panelBiseccion = new PanelBiseccion();
-
         // Cada panel se agrega con un nombre para poder llamarlo después
         contenedor.add(panelMenuInicial, MENU);
         contenedor.add(panelDescripciones, DESCRIPCIONES);
         contenedor.add(panelBiseccion,BISECCION);
+        contenedor.add(panelNewton,NEWTON);
 
         add(contenedor, BorderLayout.CENTER);
 
@@ -50,6 +49,7 @@ public class InterfazAplicacion extends JFrame {
         panelDescripciones.getBtnSeleccion().addActionListener( e -> cardLayout.show(contenedor,seleccionMetodo()));
         //Botones SALIR de los metodos
         panelBiseccion.getBtnSalir().addActionListener(e -> cardLayout.show(contenedor,DESCRIPCIONES));
+        panelNewton.getBtnSalir().addActionListener(e -> cardLayout.show(contenedor,DESCRIPCIONES));
     }
 
     public String seleccionMetodo(){
@@ -57,6 +57,9 @@ public class InterfazAplicacion extends JFrame {
         switch(panelDescripciones.getNumMetodo() + 1){
             case 1:
                 metodoSeleccionado = BISECCION;
+                break;
+            case 2:
+                metodoSeleccionado = NEWTON;
                 break;
             default:
                 JOptionPane.showMessageDialog(null,"ERROR INTENTE DE NUEVO");

@@ -1,13 +1,14 @@
 package frontend;
 
 import frontend.PanelesMetodos.PanelBiseccion;
+import frontend.PanelesMetodos.PanelNewton;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
 
 public class PruebaPaneles extends  JFrame{
 
-    PanelBiseccion panelBiseccion =  new PanelBiseccion();
+    PanelNewton panelNewton=  new PanelNewton();
 
     public PruebaPaneles(){
         setTitle("Metodos Numericos I");
@@ -16,7 +17,7 @@ public class PruebaPaneles extends  JFrame{
         setLocationRelativeTo(null);
         setResizable(false);
         setLayout(new BorderLayout());
-        add(panelBiseccion,BorderLayout.CENTER);
+        add(panelNewton,BorderLayout.CENTER);
     }
 
     public static void main(String[] args){

@@ -95,7 +95,7 @@
                     "como sistemas de ecuaciones, cálculo de raíces, integración, derivación y análisis de funciones.\n"+
                     "En estre proyecto resolveremos los siguientes metodos: \n"+
                     "1.Bisección.\n2.Newton.\n3.Secante.\n4.Gauss.\n5.Gauss-Seidel.\n6.Jacobi.\n7.Doolitle.\n8.Crout.\n9.Potencia." +
-                    "\n10.Potencia inverza.");
+                    "\n10.Potencia inversa.");
 
             tituloDesc.setBorder(BorderFactory.createEmptyBorder(0, 0, 10, 0)); // espacio entre titulo y parrafo
             tituloDesc.setFocusable(false); // quita el cursor parpadeante

@@ -39,12 +39,6 @@ public abstract class Funcion {
     }
 //
 //CREAR MATRIZ
-    public double[][] creaMatriz(int tamanio){
-        if (tamanio<=0||tamanio>MAX_ECUACIONES){
-            throw new IllegalArgumentException("Verifique el manaño ingresado, el númeor máximo de ecuaciones es "+ MAX_ECUACIONES);
-        }
-        return new double[tamanio][tamanio];
-    }
 
     public int n(){return coeficientes.length;}
 

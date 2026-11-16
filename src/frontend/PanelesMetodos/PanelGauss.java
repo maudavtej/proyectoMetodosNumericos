@@ -10,7 +10,6 @@ import java.awt.*;
 public class PanelGauss extends JPanel {
     //Instanceamos el metodo a usar
     private Gauss gauss = new Gauss();
-    private Matriz claseM = new Matriz();
 
     //Panel titulo
     private JLabel lbTitulo;

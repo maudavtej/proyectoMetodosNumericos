@@ -4,7 +4,9 @@ import java.util.Scanner;
 
 public class Gauss {
 
-    public static void gauss(double[][] matrizInput) {
+    private String[] vectorSolucionStr;
+
+    public String[] gauss(double[][] matrizInput) {
 
         //Copia de valores en otra variable
         Matriz matriz = new Matriz();
@@ -45,48 +47,13 @@ public class Gauss {
             }
         }
 
-        String sistemaStr = "";
-        String matrizAumentadaStr = "";
-        sistemaStr = matrizOriginal.toString();
-        matrizAumentadaStr = matrizOriginal.toStringMatrizAumentada();
-
-        //Sistema de ecucacioens
-        System.out.println("Sistema de ecuaciones: \n"+sistemaStr);
-        //Matriz aumentada:
-        System.out.println("Matriz aumentada: \n"+matrizAumentadaStr);
-
         //Resultado
-        System.out.println("Vector solucion: ");
+        vectorSolucionStr = new String[n];
         for (int i = 0; i < n; i++) {
-            System.out.println(Matriz.INCOGNITAS[i] + " = " + vectorSolucion[i]);
-        }
-    }
-
-    public static void main(){
-        Scanner leer = new Scanner(System.in);
-
-        int n;
-        double[][] matriz;
-
-        //Se define tamaño matriz
-        System.out.print("Ingrese tamaño matriz: ");
-        n = leer.nextInt();
-
-        matriz = new double[n][n + 1];;
-
-        //Llenado matriz
-        for (int i = 0; i < n; i++){
-            for(int j = 0; j <= n; j++){
-                if(j < n){
-                    System.out.print("Ingrese a"+i+","+j+": ");
-                    matriz[i][j] = leer.nextFloat();
-                }else{
-                    System.out.print("Ingrese b"+i+": ");
-                    matriz[i][j] = leer.nextFloat();
-                }
-            }
+            vectorSolucionStr[i] = String.valueOf(vectorSolucion[i]);
         }
 
-        gauss(matriz);
+        return vectorSolucionStr;
     }
+
 }

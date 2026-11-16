@@ -122,11 +122,11 @@ public class PanelDescripciones extends JPanel{
         txtDescripcionMetodo.setText(descripciones[numMetodo]);
     }
 
-    public void btnSiguienteAction(){
+    private void btnSiguienteAction(){
         numMetodo = (numMetodo + 1) % titulos.length;
         actualizarTexto();
     }
-    public void btnAnteriorAction() {
+    private void btnAnteriorAction() {
         numMetodo = (numMetodo - 1 + titulos.length) % titulos.length;
         actualizarTexto();
     }

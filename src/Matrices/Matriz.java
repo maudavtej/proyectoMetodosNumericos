@@ -1,5 +1,8 @@
 package Matrices;
 
+import javax.swing.*;
+import java.awt.*;
+
 public class Matriz{
     //Variables
     private int n;
@@ -53,7 +56,8 @@ public class Matriz{
         }
 
         if(pivote < 1e-12){
-            throw new ArithmeticException("Pivote cero: el sistema no tiene solución única");
+            JOptionPane.showMessageDialog(null,"Pivoteo cero, no se puede implementar metodo");
+            return;
         }
 
         multiplicarFila(filaDelPivote, 1 / matriz[filaDelPivote][columnaEvaluada]);

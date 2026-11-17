@@ -2,6 +2,7 @@ package frontend;
 
 import frontend.MenuInicial.*;
 import frontend.PanelesMetodos.PanelBiseccion;
+import frontend.PanelesMetodos.PanelJacobi;
 import frontend.PanelesMetodos.PanelNewton;
 import frontend.PanelesMetodos.PanelSecante;
 
@@ -16,6 +17,7 @@ public class InterfazAplicacion extends JFrame {
     private static final String BISECCION = "BISECCION";
     private static final String NEWTON = "NEWTON";
     private static final String SECANTE = "SECANTE";
+    private static final String JACOBI = "JACOBI";
 
     private CardLayout cardLayout;
     private JPanel contenedor;
@@ -25,6 +27,7 @@ public class InterfazAplicacion extends JFrame {
     private PanelBiseccion panelBiseccion = new PanelBiseccion();
     private PanelNewton panelNewton = new PanelNewton();
     private PanelSecante panelSecante = new PanelSecante();
+    private PanelJacobi panelJacobi = new PanelJacobi();
 
     public InterfazAplicacion(){
         setTitle("Metodos Numericos I");
@@ -44,6 +47,7 @@ public class InterfazAplicacion extends JFrame {
         contenedor.add(panelBiseccion,BISECCION);
         contenedor.add(panelNewton,NEWTON);
         contenedor.add(panelSecante,SECANTE);
+        contenedor.add(panelJacobi, JACOBI);
 
         add(contenedor, BorderLayout.CENTER);
 
@@ -54,6 +58,7 @@ public class InterfazAplicacion extends JFrame {
         panelBiseccion.getBtnSalir().addActionListener(e -> cardLayout.show(contenedor,DESCRIPCIONES));
         panelNewton.getBtnSalir().addActionListener(e -> cardLayout.show(contenedor,DESCRIPCIONES));
         panelSecante.getBtnSalir().addActionListener(e ->cardLayout.show(contenedor,DESCRIPCIONES));
+        
     }
 
     public String seleccionMetodo(){
@@ -68,6 +73,8 @@ public class InterfazAplicacion extends JFrame {
             case 3:
                 metodoSeleccionado = SECANTE;
                 break;
+            case 6:
+                metodoSeleccionado = JACOBI;
             default:
                 JOptionPane.showMessageDialog(null,"ERROR INTENTE DE NUEVO");
         }

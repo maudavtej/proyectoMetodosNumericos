@@ -17,4 +17,8 @@ public class Ejemplo2V {
     }
 
     public Matriz getMatriz(){ return m; }
+    @Override
+    public String toString() {
+        return m.toString().replace("\n", "<br>");
+    }
 }

@@ -12,12 +12,16 @@ public class Ejemplo3V {
         double[] ec2 = {4, -7, 2, 2};
 
         m = new Matriz(0);
-        m.definirTamanioMatriz(2);
+        m.definirTamanioMatriz(3);
         m.llenarMatriz(ec1, 0);
         m.llenarMatriz(ec2, 1);
         m.llenarMatriz(ec3,2);
     }
 
     public Matriz getMatriz(){ return m; }
+    @Override
+    public String toString() {
+        return m.toString().replace("\n", "<br>");
+    }
 }
 

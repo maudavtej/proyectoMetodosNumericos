@@ -1,12 +1,14 @@
 package Matrices;
 
+import java.util.ArrayList;
+
 public class Ejemplo2V {
 
     private Matriz m;
 
     public Ejemplo2V(){
         // 6x +  y = 16
-        // 3x + 2y = 8
+        // 3x + 2y = 7
         double[] ec1 = {6, 1, 16};
         double[] ec2 = {3, 2,  7};
 

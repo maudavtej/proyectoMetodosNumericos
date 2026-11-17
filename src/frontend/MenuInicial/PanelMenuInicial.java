@@ -9,6 +9,7 @@
         //Panel titulo
         private JLabel lbTitulo;
         //Panel info
+        private JLabel lbIntegrantes;
         private JLabel lbNombreIntegrante1;
         private JLabel lbNombreIntegrante2;
         private JLabel lbNombreProfesor;
@@ -57,18 +58,19 @@
             lbTitulo.setVerticalAlignment(SwingConstants.CENTER);
 
             //*PANEL INFO*//
+            lbIntegrantes = new JLabel("Inregrantes: ");
+            lbIntegrantes.setFont(new Font("Arial",Font.BOLD,16));
             lbNombreIntegrante1 = new JLabel("Davila Tejero Mauricio");
             lbNombreIntegrante2 = new JLabel("De la Cruz Barcenas Abraham");
-            lbNombreProfesor = new JLabel("Curiel García Carlos Pedro");
+            lbNombreProfesor = new JLabel("Profesor: Curiel García Carlos Pedro");
             lbNombreUniversidad = new JLabel("Universidad Nacional Autonoma de México");
-            lbGrupo = new JLabel("Grupo 1355");
+            lbGrupo = new JLabel("Grupo: 1355");
 
             panelInfo.setLayout(new BoxLayout(panelInfo, BoxLayout.Y_AXIS));
             panelInfo.setBackground(new Color(233,235,240));
             panelInfo.setBorder(BorderFactory.createEmptyBorder(0, 30, 0, 0)); // margen izquierdo
 
-            JLabel[] etiquetas = {lbNombreUniversidad, lbNombreProfesor,
-                    lbNombreIntegrante1, lbNombreIntegrante2, lbGrupo};
+            JLabel[] etiquetas = {lbNombreUniversidad, lbNombreProfesor,lbGrupo,lbIntegrantes, lbNombreIntegrante1, lbNombreIntegrante2};
 
             panelInfo.add(Box.createVerticalStrut(8));
             for (JLabel lb : etiquetas) {

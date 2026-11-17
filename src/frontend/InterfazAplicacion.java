@@ -1,5 +1,6 @@
 package frontend;
 
+import Matrices.Gauss;
 import frontend.MenuInicial.*;
 import frontend.PanelesMetodos.PanelBiseccion;
 import frontend.PanelesMetodos.PanelJacobi;

@@ -3,7 +3,7 @@ Los métodos numéricos son procedimientos y algoritmos iterativos que nos permi
 
 El presente proyecto fue desarrollado en lenguaje **JAVA** y tiene como finalidad el desarrollo y programación de los métodos numéricos con interfaz gráfica (**JavaSwing**)
 
-##MÉTODOS IMPLEMENTADOS
+## MÉTODOS IMPLEMENTADOS
 
 Los métodos desarrollados se dividen en 3 apartados
 

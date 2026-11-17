@@ -1,7 +1,9 @@
 package frontend;
 
+import Matrices.Gauss;
 import frontend.MenuInicial.*;
 import frontend.PanelesMetodos.PanelBiseccion;
+import frontend.PanelesMetodos.PanelGauss;
 import frontend.PanelesMetodos.PanelNewton;
 import frontend.PanelesMetodos.PanelSecante;
 
@@ -16,6 +18,7 @@ public class InterfazAplicacion extends JFrame {
     private static final String BISECCION = "BISECCION";
     private static final String NEWTON = "NEWTON";
     private static final String SECANTE = "SECANTE";
+    private static final String GAUSS = "GAUSS";
 
     private CardLayout cardLayout;
     private JPanel contenedor;
@@ -25,6 +28,7 @@ public class InterfazAplicacion extends JFrame {
     private PanelBiseccion panelBiseccion = new PanelBiseccion();
     private PanelNewton panelNewton = new PanelNewton();
     private PanelSecante panelSecante = new PanelSecante();
+    private PanelGauss panelGauss = new PanelGauss();
 
     public InterfazAplicacion(){
         setTitle("Metodos Numericos I");
@@ -44,6 +48,7 @@ public class InterfazAplicacion extends JFrame {
         contenedor.add(panelBiseccion,BISECCION);
         contenedor.add(panelNewton,NEWTON);
         contenedor.add(panelSecante,SECANTE);
+        contenedor.add(panelGauss,GAUSS);
 
         add(contenedor, BorderLayout.CENTER);
 
@@ -54,6 +59,7 @@ public class InterfazAplicacion extends JFrame {
         panelBiseccion.getBtnSalir().addActionListener(e -> cardLayout.show(contenedor,DESCRIPCIONES));
         panelNewton.getBtnSalir().addActionListener(e -> cardLayout.show(contenedor,DESCRIPCIONES));
         panelSecante.getBtnSalir().addActionListener(e ->cardLayout.show(contenedor,DESCRIPCIONES));
+        panelGauss.getBtnSalir().addActionListener(e -> cardLayout.show(contenedor,DESCRIPCIONES));
     }
 
     public String seleccionMetodo(){
@@ -67,6 +73,9 @@ public class InterfazAplicacion extends JFrame {
                 break;
             case 3:
                 metodoSeleccionado = SECANTE;
+                break;
+            case 4:
+                metodoSeleccionado = GAUSS;
                 break;
             default:
                 JOptionPane.showMessageDialog(null,"ERROR INTENTE DE NUEVO");

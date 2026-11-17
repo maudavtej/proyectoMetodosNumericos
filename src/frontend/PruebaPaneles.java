@@ -1,5 +1,7 @@
 package frontend;
 
+import frontend.PanelesMetodos.PanelCrout;
+import frontend.PanelesMetodos.PanelDoolittle;
 import frontend.PanelesMetodos.PanelGauss;
 
 import javax.swing.*;
@@ -7,7 +9,7 @@ import java.awt.BorderLayout;
 
 public class PruebaPaneles extends  JFrame{
 
-    PanelGauss panel = new PanelGauss();
+    PanelCrout panel = new PanelCrout();
 
     public PruebaPaneles(){
         setTitle("Metodos Numericos I");

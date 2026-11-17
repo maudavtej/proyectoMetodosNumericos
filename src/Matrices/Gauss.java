@@ -31,7 +31,7 @@ public class Gauss {
         }
 
         //Sustitucion
-        for (int fila = n- 1; fila >= 0; fila--) {
+        for (int fila = n - 1; fila >= 0; fila--) {
             for (int columna = 0; columna < n; columna++) {
                 //Asigna el primer valor del vector solucion
                 if (fila == columna && fila == n - 1) {
@@ -50,10 +50,9 @@ public class Gauss {
         //Resultado
         vectorSolucionStr = new String[n];
         for (int i = 0; i < n; i++) {
-            vectorSolucionStr[i] = String.valueOf(vectorSolucion[i]);
+            vectorSolucionStr[i] = String.format(String.valueOf(vectorSolucion[i]));
         }
 
         return vectorSolucionStr;
     }
-
 }

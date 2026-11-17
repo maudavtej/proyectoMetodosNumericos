@@ -21,6 +21,7 @@ public class Matriz{
         this.matriz=new double[n][n+1];
     }
 
+    //=====================================================
     //GETTERS
     public int getN() {
         return n;
@@ -28,6 +29,8 @@ public class Matriz{
     public double[][] getMatriz() {
         return matriz;
     }
+
+    //=====================================================
     //Define tamaño de la matriz
     public void definirTamanioMatriz(int tamanioMatriz){
         if(tamanioMatriz >= 2 && tamanioMatriz <= 5){
@@ -37,13 +40,13 @@ public class Matriz{
             throw new IllegalArgumentException("Tamaño fuera de rango");
         }
     }
-
     public void llenarMatriz(double numeros[], int numeroFila){
         for(int columna = 0; columna <= n; columna++){
             matriz[numeroFila][columna] = numeros[columna];
         }
     }
 
+    //=====================================================
     public void pivoteoParcial(int columnaEvaluada){
         double pivote = Math.abs(matriz[columnaEvaluada][columnaEvaluada]);
         int filaDelPivote = columnaEvaluada;
@@ -66,7 +69,6 @@ public class Matriz{
             intercambiarFila(filaDelPivote, columnaEvaluada);
         }
     }
-
     public void intercambiarFila(int filaOrigen,int filaDestino){
         double[] filaAux = new double[n + 1];
 
@@ -83,13 +85,11 @@ public class Matriz{
         //Asignamos los valores de la fila remplazada a la fila origen
         llenarMatriz(filaAux,filaOrigen);
     }
-
     public void multiplicarFila(int filaEvaluada,double factor){
         for(int columna = 0; columna <= n; columna++){
             matriz[filaEvaluada][columna] = factor * matriz[filaEvaluada][columna];
         }
     }
-
     public void restaFilas(int filaOrigen,int filaRestada,double factor){
         double[] filaAux =  new double[n + 1];
 
@@ -98,6 +98,14 @@ public class Matriz{
         }
 
         llenarMatriz(filaAux,filaOrigen);
+    }
+    //Método para obtener los valores independientes (vector solución)
+    public double[]getTerminosIndep(){
+        double[] b = new double[n];
+        for(int i=0;i<n;i++){
+            b[i]=matriz[i][n];
+        }
+        return b;
     }
 
     @Override
@@ -129,9 +137,6 @@ public class Matriz{
         }
         return matrizStr;
     }
-
-    //VARIABLES DESPEJADAS
-
     public String toStringDesp(){
         String s = "";
         for(int fila=0;fila<n;fila++){
@@ -145,15 +150,4 @@ public class Matriz{
         }
         return s;
     }
-
-    //========================================================
-    //Método para obtener los valores independientes (vector solución)
-    public double[]getTerminosIndep(){
-        double[] b = new double[n];
-        for(int i=0;i<n;i++){
-            b[i]=matriz[i][n];
-        }
-        return b;
-    }
-
 }

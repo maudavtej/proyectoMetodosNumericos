@@ -7,8 +7,8 @@ public class Gauss {
     public static void gauss(double[][] matrizInput) {
 
         //Copia de valores en otra variable
-        Matriz matriz = new Matriz();
-        Matriz matrizOriginal = new Matriz();
+        Matriz matriz = new Matriz(0);
+        Matriz matrizOriginal = new Matriz(0);
         int n = matrizInput.length;
         matriz.definirTamanioMatriz(n);
         matrizOriginal.definirTamanioMatriz(n);

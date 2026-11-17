@@ -2,10 +2,7 @@ package frontend;
 
 import Matrices.Gauss;
 import frontend.MenuInicial.*;
-import frontend.PanelesMetodos.PanelBiseccion;
-import frontend.PanelesMetodos.PanelGauss;
-import frontend.PanelesMetodos.PanelNewton;
-import frontend.PanelesMetodos.PanelSecante;
+import frontend.PanelesMetodos.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,6 +16,8 @@ public class InterfazAplicacion extends JFrame {
     private static final String NEWTON = "NEWTON";
     private static final String SECANTE = "SECANTE";
     private static final String GAUSS = "GAUSS";
+    private static final String DOOLITTLE = "DOOLITTLE";
+    private static final String CROUT = "CROUT";
 
     private CardLayout cardLayout;
     private JPanel contenedor;
@@ -29,6 +28,8 @@ public class InterfazAplicacion extends JFrame {
     private PanelNewton panelNewton = new PanelNewton();
     private PanelSecante panelSecante = new PanelSecante();
     private PanelGauss panelGauss = new PanelGauss();
+    private PanelDoolittle panelDoolittle = new PanelDoolittle();
+    private PanelCrout panelCrout = new PanelCrout();
 
     public InterfazAplicacion(){
         setTitle("Metodos Numericos I");
@@ -49,6 +50,8 @@ public class InterfazAplicacion extends JFrame {
         contenedor.add(panelNewton,NEWTON);
         contenedor.add(panelSecante,SECANTE);
         contenedor.add(panelGauss,GAUSS);
+        contenedor.add(panelDoolittle,DOOLITTLE);
+        contenedor.add(panelCrout,CROUT);
 
         add(contenedor, BorderLayout.CENTER);
 
@@ -60,6 +63,9 @@ public class InterfazAplicacion extends JFrame {
         panelNewton.getBtnSalir().addActionListener(e -> cardLayout.show(contenedor,DESCRIPCIONES));
         panelSecante.getBtnSalir().addActionListener(e ->cardLayout.show(contenedor,DESCRIPCIONES));
         panelGauss.getBtnSalir().addActionListener(e -> cardLayout.show(contenedor,DESCRIPCIONES));
+        panelDoolittle.getBtnSalir().addActionListener(e -> cardLayout.show(contenedor,DESCRIPCIONES));
+        panelCrout.getBtnSalir().addActionListener(e -> cardLayout.show(contenedor,DESCRIPCIONES));
+
     }
 
     public String seleccionMetodo(){
@@ -76,6 +82,12 @@ public class InterfazAplicacion extends JFrame {
                 break;
             case 4:
                 metodoSeleccionado = GAUSS;
+                break;
+            case 7:
+                metodoSeleccionado = DOOLITTLE;
+                break;
+            case 8:
+                metodoSeleccionado = CROUT;
                 break;
             default:
                 JOptionPane.showMessageDialog(null,"ERROR INTENTE DE NUEVO");

@@ -18,7 +18,7 @@ public class Matriz{
     }
     public Matriz(int n){
         this.n=n;
-        this.matriz=new double[n][n];
+        this.matriz=new double[n][n+1];
     }
 
     //GETTERS
@@ -32,7 +32,7 @@ public class Matriz{
     public void definirTamanioMatriz(int tamanioMatriz){
         if(tamanioMatriz >= 2 && tamanioMatriz <= 5){
             n = tamanioMatriz;
-            matriz = new double[n][n];
+            matriz = new double[n][n+1];
         }else{
             throw new IllegalArgumentException("Tamaño fuera de rango");
         }

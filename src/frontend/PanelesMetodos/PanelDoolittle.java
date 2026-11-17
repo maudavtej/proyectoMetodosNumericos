@@ -3,7 +3,6 @@ package frontend.PanelesMetodos;
 import Matrices.Matriz;
 import Raices.*;
 import Unidad4.Doolittle;
-
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import javax.swing.table.DefaultTableModel;
@@ -133,8 +132,6 @@ public class PanelDoolittle extends JPanel {
         panelPrincipal.add(panelCapturaN);
         panelPrincipal.add(panelResultado);
         panelPrincipal.add(panelOpciones);
-
-
 
         add(panelPrincipal);
 

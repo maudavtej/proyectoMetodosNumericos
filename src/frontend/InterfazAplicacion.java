@@ -18,6 +18,7 @@ public class InterfazAplicacion extends JFrame {
     private static final String GAUSS = "GAUSS";
     private static final String DOOLITTLE = "DOOLITTLE";
     private static final String CROUT = "CROUT";
+    private static final String POTENCIA = "POTENCIA";
 
     private CardLayout cardLayout;
     private JPanel contenedor;
@@ -30,6 +31,7 @@ public class InterfazAplicacion extends JFrame {
     private PanelGauss panelGauss = new PanelGauss();
     private PanelDoolittle panelDoolittle = new PanelDoolittle();
     private PanelCrout panelCrout = new PanelCrout();
+    private PanelPotencia panelPotencia = new PanelPotencia();
 
     public InterfazAplicacion(){
         setTitle("Metodos Numericos I");
@@ -52,6 +54,7 @@ public class InterfazAplicacion extends JFrame {
         contenedor.add(panelGauss,GAUSS);
         contenedor.add(panelDoolittle,DOOLITTLE);
         contenedor.add(panelCrout,CROUT);
+        contenedor.add(panelPotencia,POTENCIA);
 
         add(contenedor, BorderLayout.CENTER);
 
@@ -65,6 +68,7 @@ public class InterfazAplicacion extends JFrame {
         panelGauss.getBtnSalir().addActionListener(e -> cardLayout.show(contenedor,DESCRIPCIONES));
         panelDoolittle.getBtnSalir().addActionListener(e -> cardLayout.show(contenedor,DESCRIPCIONES));
         panelCrout.getBtnSalir().addActionListener(e -> cardLayout.show(contenedor,DESCRIPCIONES));
+        panelPotencia.getBtnSalir().addActionListener(e -> cardLayout.show(contenedor,DESCRIPCIONES));
 
     }
 
@@ -88,6 +92,9 @@ public class InterfazAplicacion extends JFrame {
                 break;
             case 8:
                 metodoSeleccionado = CROUT;
+                break;
+            case 9:
+                metodoSeleccionado = POTENCIA;
                 break;
             default:
                 JOptionPane.showMessageDialog(null,"ERROR INTENTE DE NUEVO");

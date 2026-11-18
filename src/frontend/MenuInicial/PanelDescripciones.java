@@ -12,6 +12,7 @@ public class PanelDescripciones extends JPanel{
     private JTextArea txtDescripcionMetodo;
     //Panel boton
     private JButton btnSeleccion;
+    private JButton btnRegresar;
     //Panel Navegacion
     private JButton btnSiguiente;
     private JButton btnAnterior;
@@ -86,6 +87,8 @@ public class PanelDescripciones extends JPanel{
         panelDescripcion.add(txtDescripcionMetodo, BorderLayout.CENTER);
 
         //*PANEL BOTON*//
+        btnRegresar = new JButton("REGRESAR");
+        panelBoton.add(btnRegresar);
         btnSeleccion = new JButton("SELECCIONAR");
         panelBoton.add(btnSeleccion);
         panelBoton.setBackground(new Color(233,235,240));
@@ -135,6 +138,7 @@ public class PanelDescripciones extends JPanel{
     public JButton getBtnSeleccion() {
         return btnSeleccion;
     }
+    public JButton getBtnRegresar(){return btnRegresar;}
     public int getNumMetodo() {
         return numMetodo;
     }

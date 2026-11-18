@@ -1,7 +1,5 @@
 package Matrices;
 
-import java.util.Scanner;
-
 public class Gauss {
 
     private String[] vectorSolucionStr;
@@ -50,7 +48,7 @@ public class Gauss {
         //Resultado
         vectorSolucionStr = new String[n];
         for (int i = 0; i < n; i++) {
-            vectorSolucionStr[i] = String.format(String.valueOf(vectorSolucion[i]));
+            vectorSolucionStr[i] = String.format("%.4f",vectorSolucion[i]);
         }
 
         return vectorSolucionStr;

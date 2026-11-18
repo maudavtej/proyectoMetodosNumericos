@@ -1,16 +1,13 @@
 package frontend;
 
-import frontend.PanelesMetodos.PanelCrout;
-import frontend.PanelesMetodos.PanelDoolittle;
-import frontend.PanelesMetodos.PanelGauss;
-import frontend.PanelesMetodos.PanelPotencia;
+import frontend.PanelesMetodos.*;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
 
 public class PruebaPaneles extends  JFrame{
 
-    PanelPotencia panel = new PanelPotencia();
+    PanelPotenciaInversa panel = new PanelPotenciaInversa();
 
     public PruebaPaneles(){
         setTitle("Metodos Numericos I");

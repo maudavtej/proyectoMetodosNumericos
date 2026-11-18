@@ -135,8 +135,6 @@ public class PanelCrout extends JPanel{
         panelPrincipal.add(panelResultado);
         panelPrincipal.add(panelOpciones);
 
-
-
         add(panelPrincipal);
 
         //Misma alineacion horizontal para los 4 paneles; si no, BoxLayout desplaza alguno
@@ -258,17 +256,17 @@ public class PanelCrout extends JPanel{
         panelTitulo.setPreferredSize(new Dimension(800, 90));
         panelTitulo.setMaximumSize(new Dimension(Integer.MAX_VALUE, 90));
 
-        panelDescripcion.setPreferredSize(new Dimension(800, 30));
-        panelDescripcion.setPreferredSize(new Dimension(Integer.MAX_VALUE, 30));
+        panelDescripcion.setPreferredSize(new Dimension(800, 35));
+        panelDescripcion.setMaximumSize(new Dimension(Integer.MAX_VALUE, 35));
 
         panelCapturaSistema.setPreferredSize(new Dimension(800, 250));
         panelCapturaSistema.setMaximumSize(new Dimension(Integer.MAX_VALUE, 250));
 
-        panelCapturaN.setPreferredSize(new Dimension(800, 100));
-        panelCapturaN.setMaximumSize(new Dimension(Integer.MAX_VALUE, 100));
+        panelCapturaN.setPreferredSize(new Dimension(800, 90));
+        panelCapturaN.setMaximumSize(new Dimension(Integer.MAX_VALUE, 90));
 
         panelResultado.setPreferredSize(new Dimension(800, 50));
-        panelResultado.setPreferredSize(new Dimension(Integer.MAX_VALUE, 50));
+        panelResultado.setMaximumSize(new Dimension(Integer.MAX_VALUE, 50));
 
         panelOpciones.setPreferredSize(new Dimension(800, 70));
         panelOpciones.setMaximumSize(new Dimension(Integer.MAX_VALUE,70));

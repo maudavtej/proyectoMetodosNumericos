@@ -6,7 +6,7 @@ import javax.swing.*;
 
 public class Potencia {
 
-    private static final double TOLERANCIA = 0.001;
+    private static final double TOLERANCIA = 0.0001;
     private static final int MAXIMO_ITERACIONES = 100;
     private double[] vectorX;
     private double[] vectorY;

@@ -20,7 +20,6 @@ public class PanelGaussSeidel extends JPanel {
     private JComboBox<String> cbEjemplos;
     //==========================================================
     JTextArea txtSolucion;
-
     //========================================================
     // BOTONES
     private JButton btnseleccionarEj;
@@ -132,7 +131,7 @@ public class PanelGaussSeidel extends JPanel {
 
         btnBorrar = new JButton("BORRAR");
         btnBorrar.addActionListener(e -> btnBorrarAction());
-        btnSalir  = new JButton("REGRESAR");
+        btnSalir  = new JButton("SALIR");
 
         soluciones.add(btnSalir, BorderLayout.WEST);
         soluciones.add(btnBorrar, BorderLayout.EAST);

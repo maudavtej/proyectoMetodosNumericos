@@ -196,16 +196,16 @@ public class PanelGauss extends JPanel {
         panelTitulo.setMaximumSize(new Dimension(Integer.MAX_VALUE, 90));
 
         panelDescripcion.setPreferredSize(new Dimension(800, 30));
-        panelDescripcion.setPreferredSize(new Dimension(Integer.MAX_VALUE, 30));
+        panelDescripcion.setMaximumSize(new Dimension(Integer.MAX_VALUE, 30));
 
-        panelCapturaSistema.setPreferredSize(new Dimension(800, 250));
-        panelCapturaSistema.setMaximumSize(new Dimension(Integer.MAX_VALUE, 250));
+        panelCapturaSistema.setPreferredSize(new Dimension(800, 359));
+        panelCapturaSistema.setMaximumSize(new Dimension(Integer.MAX_VALUE, 359));
 
         panelCapturaN.setPreferredSize(new Dimension(800, 100));
         panelCapturaN.setMaximumSize(new Dimension(Integer.MAX_VALUE, 100));
 
         panelResultado.setPreferredSize(new Dimension(800, 50));
-        panelResultado.setPreferredSize(new Dimension(Integer.MAX_VALUE, 50));
+        panelResultado.setMaximumSize(new Dimension(Integer.MAX_VALUE, 50));
 
         panelOpciones.setPreferredSize(new Dimension(800, 70));
         panelOpciones.setMaximumSize(new Dimension(Integer.MAX_VALUE,70));

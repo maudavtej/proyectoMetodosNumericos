@@ -10,7 +10,7 @@ public class Ejemplo2V {
         // 6x +  y = 16
         // 3x + 2y = 7
         double[] ec1 = {6, 1, 16};
-        double[] ec2 = {3, 2,  7};
+        double[] ec2 = {2, 3,  7};
 
         m = new Matriz(0);
         m.definirTamanioMatriz(2);
@@ -19,7 +19,8 @@ public class Ejemplo2V {
     }
 
     public Matriz getMatriz(){ return m; }
-    public String getDesp(){
-        return m.toStringDesp();
+    @Override
+    public String toString() {
+        return m.toString().replace("\n", "<br>");
     }
 }

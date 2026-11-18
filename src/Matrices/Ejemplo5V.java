@@ -17,7 +17,7 @@ package Matrices;
             double[] ec5 = {1, 2, -1, 2,16,76};
 
             m = new Matriz(0);
-            m.definirTamanioMatriz(2);
+            m.definirTamanioMatriz(5);
             m.llenarMatriz(ec1, 0);
             m.llenarMatriz(ec2, 1);
             m.llenarMatriz(ec3,2);
@@ -26,6 +26,10 @@ package Matrices;
         }
 
         public Matriz getMatriz(){ return m; }
+        @Override
+        public String toString() {
+            return m.toString().replace("\n", "<br>");
+        }
     }
 
 

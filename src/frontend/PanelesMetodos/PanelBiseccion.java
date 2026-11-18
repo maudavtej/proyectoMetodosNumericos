@@ -208,7 +208,7 @@ public class PanelBiseccion extends JPanel{
         if (itemSeleccionado > 0 && itemSeleccionado <= funciones.length){
             lbDescripcion.setText("<html>-Solucion de "+funciones[itemSeleccionado - 1]+" por el metodo de biseccion, ingrese valores para continuar: </html>");
         }else{
-            lbDescripcion.setText("-Ingrese una opcion valida");
+            lbDescripcion.setText("-Ingrese una opcion válida");
         }
     }
     public void btnCalcularAction(){

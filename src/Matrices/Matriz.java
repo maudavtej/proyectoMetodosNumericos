@@ -110,18 +110,30 @@ public class Matriz{
 
     @Override
     public String toString(){
-        String matrizStr = "";
-        for (int fila  = 0; fila < matriz.length; fila++){
+        java.text.DecimalFormat df = new java.text.DecimalFormat("0.####");
+        StringBuilder matrizStr = new StringBuilder();
+
+        for (int fila = 0; fila < matriz.length; fila++){
             for (int columna = 0; columna <= n; columna++){
+                String valor = df.format(matriz[fila][columna]);
+
                 if(columna != n){
-                    matrizStr += " "+matriz[fila][columna]+INCOGNITAS[columna]+" ";
-                }else{
-                    matrizStr += "= "+matriz[fila][columna];
+                    if (matriz[fila][columna] > 0 && columna > 0) {
+                        matrizStr.append(" + ");
+                    } else if (matriz[fila][columna] < 0 && columna > 0) {
+                        matrizStr.append(" - ");
+                    } else if (columna > 0) {
+                        matrizStr.append(" ");
+                    }
+
+                    matrizStr.append(valor).append(INCOGNITAS[columna]);
+                } else {
+                    matrizStr.append(" = ").append(valor);
                 }
             }
-            matrizStr += "\n";
+            matrizStr.append("\n");
         }
-        return matrizStr;
+        return matrizStr.toString();
     }
     public String toStringMatrizAumentada(){
         String matrizStr = "";

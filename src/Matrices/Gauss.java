@@ -9,9 +9,11 @@ public class Gauss {
     public String[] gauss(double[][] matrizInput) {
 
         //Copia de valores en otra variable
+        Matriz matriz = new Matriz(0);
+        Matriz matrizOriginal = new Matriz(0);
         int n = matrizInput.length;
-        Matriz matriz = new Matriz(n,matrizInput);
-        Matriz matrizOriginal = new Matriz(n,matrizInput);
+        matriz = new Matriz(n,matrizInput);
+        matrizOriginal = new Matriz(n,matrizInput);
 
         for(int i = 0; i < n; i++){
             matriz.llenarMatriz(matrizInput[i],i);

@@ -356,10 +356,7 @@ public class PanelPotencia extends JPanel{
         }
         vectorStr.append(")");
         String resultado = vectorStr.toString();
-
-
-
-
+        
         txtIteraciones.setText(String.valueOf(iteracioens));
         txtValorPropioDom.setText(String.format("%.4f",valorPropioDom));
         txtVectorPropio.setText(resultado);

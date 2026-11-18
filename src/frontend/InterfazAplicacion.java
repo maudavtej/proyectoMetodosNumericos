@@ -16,6 +16,8 @@ public class InterfazAplicacion extends JFrame {
     private static final String BISECCION = "BISECCION";
     private static final String NEWTON = "NEWTON";
     private static final String SECANTE = "SECANTE";
+    private static final String GAUSS = "GAUSS";
+
     private static final String JACOBI = "JACOBI";
     private static final String GAUSS_SEIDEL = "GAUSS-SEIDEL";
     private static final String DOOLITLE = "DOOLITTLE";
@@ -30,6 +32,8 @@ public class InterfazAplicacion extends JFrame {
     private PanelBiseccion panelBiseccion = new PanelBiseccion();
     private PanelNewton panelNewton = new PanelNewton();
     private PanelSecante panelSecante = new PanelSecante();
+    private PanelGauss panelGauss = new PanelGauss();
+
     private PanelJacobi panelJacobi = new PanelJacobi();
     private PanelGaussSeidel panelGaussSeidel = new PanelGaussSeidel();
     private PanelDoolittle panelDoolittle = new PanelDoolittle();
@@ -54,6 +58,7 @@ public class InterfazAplicacion extends JFrame {
         contenedor.add(panelBiseccion,BISECCION);
         contenedor.add(panelNewton,NEWTON);
         contenedor.add(panelSecante,SECANTE);
+        contenedor.add(panelGauss, GAUSS);
         contenedor.add(panelJacobi, JACOBI);
         contenedor.add(panelGaussSeidel, GAUSS_SEIDEL);
         contenedor.add(panelDoolittle,DOOLITLE);
@@ -69,6 +74,7 @@ public class InterfazAplicacion extends JFrame {
         panelBiseccion.getBtnSalir().addActionListener(e -> cardLayout.show(contenedor,DESCRIPCIONES));
         panelNewton.getBtnSalir().addActionListener(e -> cardLayout.show(contenedor,DESCRIPCIONES));
         panelSecante.getBtnSalir().addActionListener(e ->cardLayout.show(contenedor,DESCRIPCIONES));
+        panelGauss.getBtnSalir().addActionListener(e ->cardLayout.show(contenedor,DESCRIPCIONES));
         panelJacobi.getBtnSalir().addActionListener(e -> cardLayout.show(contenedor, DESCRIPCIONES));
         panelGaussSeidel.getBtnSalir().addActionListener(e->cardLayout.show(contenedor, DESCRIPCIONES));
         panelDoolittle.getBtnSalir().addActionListener(e -> cardLayout.show(contenedor,DESCRIPCIONES));
@@ -87,6 +93,9 @@ public class InterfazAplicacion extends JFrame {
                 break;
             case 3:
                 metodoSeleccionado = SECANTE;
+                break;
+            case 4:
+                metodoSeleccionado =GAUSS;
                 break;
             case 5:
                 metodoSeleccionado= GAUSS_SEIDEL;

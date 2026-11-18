@@ -334,7 +334,7 @@ public class PanelDoolittle extends JPanel {
                 strU[i][j] = String.format("%.4f", auxTablU[i][j]);
             }
         }
-        modeloL.setDataVector(strL, encabezados);   // reemplaza todo, sin acumular filas
+        modeloL.setDataVector(strL, encabezados);
         modeloU.setDataVector(strU, encabezados);
 
         cardLayout.show(contenedor,SOLUCION);

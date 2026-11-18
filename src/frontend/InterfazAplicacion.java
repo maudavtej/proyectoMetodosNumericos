@@ -107,4 +107,5 @@ public class InterfazAplicacion extends JFrame {
         InterfazAplicacion interfaz = new InterfazAplicacion();
         interfaz.setVisible(true);
     }
+
 }

@@ -2,7 +2,10 @@ package frontend;
 
 import Matrices.Gauss;
 import frontend.MenuInicial.*;
-import frontend.PanelesMetodos.*;
+import frontend.PanelesMetodos.PanelBiseccion;
+import frontend.PanelesMetodos.PanelJacobi;
+import frontend.PanelesMetodos.PanelNewton;
+import frontend.PanelesMetodos.PanelSecante;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,10 +18,7 @@ public class InterfazAplicacion extends JFrame {
     private static final String BISECCION = "BISECCION";
     private static final String NEWTON = "NEWTON";
     private static final String SECANTE = "SECANTE";
-    private static final String GAUSS = "GAUSS";
-    private static final String DOOLITTLE = "DOOLITTLE";
-    private static final String CROUT = "CROUT";
-    private static final String POTENCIA = "POTENCIA";
+    private static final String JACOBI = "JACOBI";
 
     private CardLayout cardLayout;
     private JPanel contenedor;
@@ -28,10 +28,7 @@ public class InterfazAplicacion extends JFrame {
     private PanelBiseccion panelBiseccion = new PanelBiseccion();
     private PanelNewton panelNewton = new PanelNewton();
     private PanelSecante panelSecante = new PanelSecante();
-    private PanelGauss panelGauss = new PanelGauss();
-    private PanelDoolittle panelDoolittle = new PanelDoolittle();
-    private PanelCrout panelCrout = new PanelCrout();
-    private PanelPotencia panelPotencia = new PanelPotencia();
+    private PanelJacobi panelJacobi = new PanelJacobi();
 
     public InterfazAplicacion(){
         setTitle("Metodos Numericos I");
@@ -51,10 +48,7 @@ public class InterfazAplicacion extends JFrame {
         contenedor.add(panelBiseccion,BISECCION);
         contenedor.add(panelNewton,NEWTON);
         contenedor.add(panelSecante,SECANTE);
-        contenedor.add(panelGauss,GAUSS);
-        contenedor.add(panelDoolittle,DOOLITTLE);
-        contenedor.add(panelCrout,CROUT);
-        contenedor.add(panelPotencia,POTENCIA);
+        contenedor.add(panelJacobi, JACOBI);
 
         add(contenedor, BorderLayout.CENTER);
 
@@ -65,11 +59,7 @@ public class InterfazAplicacion extends JFrame {
         panelBiseccion.getBtnSalir().addActionListener(e -> cardLayout.show(contenedor,DESCRIPCIONES));
         panelNewton.getBtnSalir().addActionListener(e -> cardLayout.show(contenedor,DESCRIPCIONES));
         panelSecante.getBtnSalir().addActionListener(e ->cardLayout.show(contenedor,DESCRIPCIONES));
-        panelGauss.getBtnSalir().addActionListener(e -> cardLayout.show(contenedor,DESCRIPCIONES));
-        panelDoolittle.getBtnSalir().addActionListener(e -> cardLayout.show(contenedor,DESCRIPCIONES));
-        panelCrout.getBtnSalir().addActionListener(e -> cardLayout.show(contenedor,DESCRIPCIONES));
-        panelPotencia.getBtnSalir().addActionListener(e -> cardLayout.show(contenedor,DESCRIPCIONES));
-
+        panelJacobi.getBtnSalir().addActionListener(e -> cardLayout.show(contenedor, DESCRIPCIONES));
     }
 
     public String seleccionMetodo(){
@@ -84,17 +74,8 @@ public class InterfazAplicacion extends JFrame {
             case 3:
                 metodoSeleccionado = SECANTE;
                 break;
-            case 4:
-                metodoSeleccionado = GAUSS;
-                break;
-            case 7:
-                metodoSeleccionado = DOOLITTLE;
-                break;
-            case 8:
-                metodoSeleccionado = CROUT;
-                break;
-            case 9:
-                metodoSeleccionado = POTENCIA;
+            case 6:
+                metodoSeleccionado = JACOBI;
                 break;
             default:
                 JOptionPane.showMessageDialog(null,"ERROR INTENTE DE NUEVO");

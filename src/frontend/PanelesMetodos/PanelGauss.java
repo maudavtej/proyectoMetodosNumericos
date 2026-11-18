@@ -110,7 +110,7 @@ public class PanelGauss extends JPanel {
             p.setAlignmentX(Component.LEFT_ALIGNMENT);
         }
         //*PANEL TITULO*//
-        lbTitulo = new JLabel("METODO DE GAUSS");
+        lbTitulo = new JLabel("MÉTODO DE GAUSS");
         lbTitulo.setFont(new Font("Arial", Font.BOLD, 40));//Tipo de letra
         lbTitulo.setForeground(Color.WHITE);//Color de la letra
         lbTitulo.setHorizontalAlignment(SwingConstants.CENTER);
@@ -185,7 +185,7 @@ public class PanelGauss extends JPanel {
         btnLimpiar.addActionListener(e -> btnLimpiar());
         btnCaclular = new JButton("CALCULAR");
         btnCaclular.addActionListener(e -> btnCalcular());
-        btnSalir = new JButton("SALIR");
+        btnSalir = new JButton("REGRESAR");
 
         panelOpciones.add(btnSalir);
         panelOpciones.add(btnLimpiar);

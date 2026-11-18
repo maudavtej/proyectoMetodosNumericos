@@ -126,7 +126,7 @@ public class PanelPotenciaInversa extends JPanel{
         }
 
         //*PANEL TITULO*//
-        lbTitulo = new JLabel("METODO POTENCIA INVERSA");
+        lbTitulo = new JLabel("MÉTODO DE LA POTENCIA INVERSA");
         lbTitulo.setFont(new Font("Arial", Font.BOLD, 40));//Tipo de letra
         lbTitulo.setForeground(Color.WHITE);//Color de la letra
         lbTitulo.setHorizontalAlignment(SwingConstants.CENTER);
@@ -225,7 +225,7 @@ public class PanelPotenciaInversa extends JPanel{
         panelOpciones.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 0));
         panelOpciones.setBorder(BorderFactory.createEmptyBorder(10, 30, 10, 30));
 
-        btnSalir = new JButton("SALIR");
+        btnSalir = new JButton("REGRESAR");
         btnLimpiar = new JButton("LIMPIAR");
         btnLimpiar.addActionListener(e -> btnLimpiar());
         btnCaclular = new JButton("CALCULAR");
@@ -368,7 +368,7 @@ public class PanelPotenciaInversa extends JPanel{
         String resultado = vectorStr.toString();
 
         if(convergencia == true){
-            lbConvergio.setText("Converió");
+            lbConvergio.setText("Convergió");
         }else{
             lbConvergio.setText("No convergió");
         }

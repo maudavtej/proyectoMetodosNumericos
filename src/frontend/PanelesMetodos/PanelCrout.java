@@ -82,7 +82,7 @@ public class PanelCrout extends JPanel{
     private CardLayout cardLayout;
     private JPanel contenedor;
     private static final String SISTEMA = "SISTEMA";
-    private static final String SOLUCION = "SOLUCION";
+    private static final String SOLUCION = "SOLUCIÓN";
     private JLabel lbTablaL = new JLabel("L: ");
     private JLabel lbTablaU = new JLabel("U: ");
     private JTable tablaL;
@@ -142,7 +142,7 @@ public class PanelCrout extends JPanel{
             p.setAlignmentX(Component.LEFT_ALIGNMENT);
         }
         //*PANEL TITULO*//
-        lbTitulo = new JLabel("METODO DE CROUT");
+        lbTitulo = new JLabel("MÉTODO DE CROUT");
         lbTitulo.setFont(new Font("Arial", Font.BOLD, 40));//Tipo de letra
         lbTitulo.setForeground(Color.WHITE);//Color de la letra
         lbTitulo.setHorizontalAlignment(SwingConstants.CENTER);
@@ -237,7 +237,7 @@ public class PanelCrout extends JPanel{
         panelOpciones.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 0));
         panelOpciones.setBorder(BorderFactory.createEmptyBorder(10, 30, 10, 30));
 
-        btnSalir = new JButton("SALIR");
+        btnSalir = new JButton("REGRESAR");
         btnLimpiar = new JButton("LIMPIAR");
         btnLimpiar.addActionListener(e -> btnLimpiar());
         btnCaclular = new JButton("CALCULAR");
@@ -324,7 +324,7 @@ public class PanelCrout extends JPanel{
         panelOpciones.repaint();
     }
     private void btnMostrarLU(){
-        lbDescripcion.setText("Factorizacion LU: ");
+        lbDescripcion.setText("Factorización LU: ");
         String[] encabezados = new String[n];
         String[][] strL= new String[n][n];
         String[][] strU= new String[n][n];

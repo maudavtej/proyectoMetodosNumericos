@@ -73,7 +73,7 @@ public class PanelDescripciones extends JPanel{
         txtSubtitulo.setWrapStyleWord(true);
         txtSubtitulo.setEditable(false);
         txtSubtitulo.setOpaque(false);
-        txtSubtitulo.setFont(new Font("Arial",Font.BOLD,16));
+        txtSubtitulo.setFont(new Font("Arial",Font.BOLD,20));
 
         txtDescripcionMetodo = new JTextArea(descripciones[numMetodo]);
         txtDescripcionMetodo.setFocusable(false); // quita el cursor parpadeante
@@ -81,7 +81,7 @@ public class PanelDescripciones extends JPanel{
         txtDescripcionMetodo.setWrapStyleWord(true);//Evita cortar palabras a la mitad
         txtDescripcionMetodo.setEditable(false);
         txtDescripcionMetodo.setOpaque(false);//Hace transparente el fondo
-        txtDescripcionMetodo.setFont(new Font("Arial",Font.PLAIN,13));
+        txtDescripcionMetodo.setFont(new Font("ARIAL",Font.PLAIN,13));
 
         panelDescripcion.add(txtSubtitulo, BorderLayout.NORTH);
         panelDescripcion.add(txtDescripcionMetodo, BorderLayout.CENTER);

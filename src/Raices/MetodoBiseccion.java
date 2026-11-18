@@ -13,6 +13,7 @@ public class MetodoBiseccion {
 
     //Metodo Biseccion
     public ArrayList<double[]> biseccion(int n,double a, double b){
+        tablaCompleta.clear();
         //Ejemplos disponibles
         Funcion[] ejemplos = new Funcion[4];
         ejemplos[0] = new Ejemplo1();
@@ -30,6 +31,7 @@ public class MetodoBiseccion {
         f_a = f.calcularValorFuncion(a);
         f_b = f.calcularValorFuncion(b);
 
+
         if (f_a*f_b>0){
             throw new IllegalArgumentException("No existe cambio de signo en este intervalo. Intente con otro");
         }
@@ -42,16 +44,18 @@ public class MetodoBiseccion {
 
             tablaCompleta.add(new double[]{a,b,c,f_a,f_b,f_c});
 
-            a = (f_a * f_c > 0) ? c : a;//si el signo es el mismo, sustituimos por c ese valor, si no sigue siendo el mismo
-            f_a = (f_a * f_c > 0) ? f_c : f_a;
-            b = (f_b * f_c > 0) ? c : b;
-            f_b = (f_b * f_c > 0) ? f_c : f_b;
-        }while (Math.abs(f_c)> Funcion.TOLERANCIA && iteraciones<MAX_ITERACIONES);
+            if (f_a * f_c > 0) {
+                a = c;
+                f_a = f_c;
+            } else {
+                b = c;
+                f_b = f_c;
+            }
+        } while (Math.abs(b - a) / 2 > Funcion.TOLERANCIA && iteraciones < MAX_ITERACIONES);
 
         return tablaCompleta;
     }
 
-    //Getter
     public double getC() {
         return c;
     }

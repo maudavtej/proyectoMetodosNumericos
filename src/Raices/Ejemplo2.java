@@ -2,28 +2,32 @@ package Raices;
 
 public class Ejemplo2 extends Funcion {
 
-    private final String funcionStr = "f(x) = Ln(x) + (e^-x) - 0.5";
-    private final String derivadaStr = "f´(x) = (1/x) - (e^-x)";
+    // Cambiamos los textos de la función y la derivada
+    private final String funcionStr = "f(x) = cos(x) - x";
+    private final String derivadaStr = "f'(x) = -sen(x) - 1";
 
     @Override
-    public String getFuncionStr() {return funcionStr;}
+    public String getFuncionStr() { return funcionStr; }
+
     @Override
-    public String getDerivadaStr() {
-        return derivadaStr;
-    }
+    public String getDerivadaStr() { return derivadaStr; }
+
     @Override
     public double calcularValorFuncion(double a){
-        return Math.log(a) + Math.exp(-a) - 0.5;
+        // En Java, Math.cos() recibe radianes
+        return Math.cos(a) - a;
     }
+
     @Override
     public double calcularValorDerivada(double a){
-        return (1.0/a) - Math.exp(-a);
+        return -Math.sin(a) - 1;
     }
 
     public static String toStringFunc(){
-        return "f(x) = Ln(x) + e<sup>-x</sup> - 0.5";
+        return "f(x) = cos(x) - x";
     }
+
     public static String toStringDer(){
-        return "f′(x) = (1/x) - e<sup>-x</sup>";
+        return "f′(x) = -sen(x) - 1";
     }
 }

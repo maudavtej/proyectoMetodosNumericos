@@ -2,13 +2,11 @@ package frontend;
 
 import Matrices.Gauss;
 import frontend.MenuInicial.*;
-import frontend.PanelesMetodos.PanelBiseccion;
-import frontend.PanelesMetodos.PanelJacobi;
-import frontend.PanelesMetodos.PanelNewton;
-import frontend.PanelesMetodos.PanelSecante;
+import frontend.PanelesMetodos.*;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 
 public class InterfazAplicacion extends JFrame {
 
@@ -19,6 +17,7 @@ public class InterfazAplicacion extends JFrame {
     private static final String NEWTON = "NEWTON";
     private static final String SECANTE = "SECANTE";
     private static final String JACOBI = "JACOBI";
+    private static final String GAUSS_SEIDEL = "GAUSS-SEIDEL";
 
     private CardLayout cardLayout;
     private JPanel contenedor;
@@ -29,6 +28,7 @@ public class InterfazAplicacion extends JFrame {
     private PanelNewton panelNewton = new PanelNewton();
     private PanelSecante panelSecante = new PanelSecante();
     private PanelJacobi panelJacobi = new PanelJacobi();
+    private PanelGaussSeidel panelGaussSeidel= new PanelGaussSeidel();
 
     public InterfazAplicacion(){
         setTitle("Metodos Numericos I");
@@ -49,6 +49,7 @@ public class InterfazAplicacion extends JFrame {
         contenedor.add(panelNewton,NEWTON);
         contenedor.add(panelSecante,SECANTE);
         contenedor.add(panelJacobi, JACOBI);
+        contenedor.add(panelGaussSeidel, GAUSS_SEIDEL);
 
         add(contenedor, BorderLayout.CENTER);
 
@@ -60,6 +61,7 @@ public class InterfazAplicacion extends JFrame {
         panelNewton.getBtnSalir().addActionListener(e -> cardLayout.show(contenedor,DESCRIPCIONES));
         panelSecante.getBtnSalir().addActionListener(e ->cardLayout.show(contenedor,DESCRIPCIONES));
         panelJacobi.getBtnSalir().addActionListener(e -> cardLayout.show(contenedor, DESCRIPCIONES));
+        panelGaussSeidel.getBtnSalir().addActionListener(e->cardLayout.show(contenedor, DESCRIPCIONES));
     }
 
     public String seleccionMetodo(){
@@ -73,6 +75,9 @@ public class InterfazAplicacion extends JFrame {
                 break;
             case 3:
                 metodoSeleccionado = SECANTE;
+                break;
+            case 5:
+                metodoSeleccionado= GAUSS_SEIDEL;
                 break;
             case 6:
                 metodoSeleccionado = JACOBI;

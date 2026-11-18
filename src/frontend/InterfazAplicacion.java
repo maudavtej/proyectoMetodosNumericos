@@ -59,7 +59,7 @@ public class InterfazAplicacion extends JFrame {
         panelBiseccion.getBtnSalir().addActionListener(e -> cardLayout.show(contenedor,DESCRIPCIONES));
         panelNewton.getBtnSalir().addActionListener(e -> cardLayout.show(contenedor,DESCRIPCIONES));
         panelSecante.getBtnSalir().addActionListener(e ->cardLayout.show(contenedor,DESCRIPCIONES));
-        
+        panelJacobi.getBtnSalir().addActionListener(e -> cardLayout.show(contenedor, DESCRIPCIONES));
     }
 
     public String seleccionMetodo(){
@@ -76,6 +76,7 @@ public class InterfazAplicacion extends JFrame {
                 break;
             case 6:
                 metodoSeleccionado = JACOBI;
+                break;
             default:
                 JOptionPane.showMessageDialog(null,"ERROR INTENTE DE NUEVO");
         }

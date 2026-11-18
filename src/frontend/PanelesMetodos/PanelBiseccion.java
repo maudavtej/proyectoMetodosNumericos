@@ -69,7 +69,7 @@ public class PanelBiseccion extends JPanel{
         }
 
         //*PANEL TITULO*//
-        lbTitulo = new JLabel("METODO DE BISECCIÓN");
+        lbTitulo = new JLabel("MÉTODO DE BISECCIÓN");
         lbTitulo.setFont(new Font("Arial",Font.BOLD,40));//Tipo de letra
         lbTitulo.setForeground(Color.WHITE);//Color de la letra
         lbTitulo.setHorizontalAlignment(SwingConstants.CENTER);
@@ -152,7 +152,7 @@ public class PanelBiseccion extends JPanel{
         panelOpciones.setBorder(BorderFactory.createEmptyBorder(10, 30, 10, 30));
 
         btnBorrar = new JButton("BORRAR");
-        btnSalir = new JButton("SALIR");
+        btnSalir = new JButton("REGRESAR");
 
         btnBorrar.addActionListener(e -> btnBorrarAction());
 
@@ -163,7 +163,7 @@ public class PanelBiseccion extends JPanel{
         panelSolucion.setBackground(new Color(233,235,240));
         panelSolucion.setBorder(BorderFactory.createEmptyBorder(20, 50, 20, 50));
 
-        lbSolucion = new JLabel("Solucion: ");
+        lbSolucion = new JLabel("Solución: ");
         txtSolucion = new JTextArea("");
         txtSolucion.setFocusable(false); // quita el cursor parpadeante
         txtSolucion.setLineWrap(true);//Ajusta automaticamente el texto al ancho disponible
@@ -206,17 +206,15 @@ public class PanelBiseccion extends JPanel{
     public void btnSeleccionarAction(String funciones[]){
         int itemSeleccionado = cbEjemplos.getSelectedIndex();
         if (itemSeleccionado > 0 && itemSeleccionado <= funciones.length){
-            lbDescripcion.setText("<html>-Solucion de "+funciones[itemSeleccionado - 1]+" por el metodo de biseccion, ingrese valores para continuar: </html>");
+            lbDescripcion.setText("<html> Solución de "+funciones[itemSeleccionado - 1]+" por el metodo de biseccion, ingrese valores para continuar: </html>");
         }else{
-            lbDescripcion.setText("-Ingrese una opcion válida");
+            lbDescripcion.setText("Ingrese una opcion válida");
         }
     }
     public void btnCalcularAction(){
         int intervaloA = 0;
         int intervaloB = 0;
         int ejemploSelccionado = cbEjemplos.getSelectedIndex() - 1;
-
-        //Borra los valores anteriormente puestos en la tabla
         modelo.setRowCount(0);
 
         try {
@@ -233,17 +231,21 @@ public class PanelBiseccion extends JPanel{
             JOptionPane.showMessageDialog(null,"Seleccione un ejemplo.");
             return;
         }
+        try {
+            tablaFormat = formatoRetorno(biseccion.biseccion(ejemploSelccionado, intervaloA, intervaloB));
 
-        tablaFormat = formatoRetorno(biseccion.biseccion(ejemploSelccionado,intervaloA,intervaloB));
+            for(int i = 0; i < tablaFormat.size(); i++){
+                modelo.addRow(new Object[]{i + 1,tablaFormat.get(i)[0],tablaFormat.get(i)[1],tablaFormat.get(i)[2],tablaFormat.get(i)[3],tablaFormat.get(i)[4],tablaFormat.get(i)[5]});
+            }
 
+            //Actualizamos panel con la solucion
+            solucionStrFormat = String.format("%.4f",biseccion.getC());
+            txtSolucion.setText(solucionStrFormat);
 
-        for(int i = 0; i < tablaFormat.size();i++){
-            modelo.addRow(new Object[]{i + 1,tablaFormat.get(i)[0],tablaFormat.get(i)[1],tablaFormat.get(i)[2],tablaFormat.get(i)[3],tablaFormat.get(i)[4],tablaFormat.get(i)[5]});
+        } catch (IllegalArgumentException ex) {
+            JOptionPane.showMessageDialog(null,  "Error de intervalo. Debe existir un cambio de signo para este método");
+            txtSolucion.setText("");
         }
-
-        //Actualizamos panel con la solucion
-        solucionStrFormat = String.format("%.4f",biseccion.getC());
-        txtSolucion.setText(solucionStrFormat);
     }
     //Metodo para dar formato
     public ArrayList<String[]> formatoRetorno(ArrayList<double[]> tablaRetorno){

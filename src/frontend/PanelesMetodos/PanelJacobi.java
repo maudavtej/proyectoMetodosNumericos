@@ -132,7 +132,7 @@ public class PanelJacobi extends JPanel {
 
         btnBorrar = new JButton("BORRAR");
         btnBorrar.addActionListener(e -> btnBorrarAction());
-        btnSalir  = new JButton("SALIR");
+        btnSalir  = new JButton("REGRESAR");
 
         soluciones.add(btnSalir, BorderLayout.WEST);
         soluciones.add(btnBorrar, BorderLayout.EAST);

@@ -10,7 +10,7 @@ public class Descripciones {
                     "  ¿Cómo funciona?\n" +
                     "Para aplicar este método, se necesita una función continua f(x) y un intervalo inicial [a,b] en el que los " +
                     "valores de la función tengan signos opuestos: f(a) * f(b) < 0.\n" +
-                    "*Procedimiento:\n" +
+                    "Procedimiento\n" +
                     "1.Establecer el valor inicial.\n" +
                     "2.Calcular el punto medio: Se obtiene mediante la fórmula: xr = (a + b)/2\n" +
                     "3.Evaluar la función: Se sustituye xr en la función para determinar el signo de f(xr).\n" +

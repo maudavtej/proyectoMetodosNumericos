@@ -122,7 +122,7 @@ public class PanelPotencia extends JPanel{
         }
 
         //*PANEL TITULO*//
-        lbTitulo = new JLabel("METODO POTENCIA");
+        lbTitulo = new JLabel("MÉTODO DE LA POTENCIA");
         lbTitulo.setFont(new Font("Arial", Font.BOLD, 40));//Tipo de letra
         lbTitulo.setForeground(Color.WHITE);//Color de la letra
         lbTitulo.setHorizontalAlignment(SwingConstants.CENTER);
@@ -228,7 +228,7 @@ public class PanelPotencia extends JPanel{
         panelOpciones.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 0));
         panelOpciones.setBorder(BorderFactory.createEmptyBorder(10, 30, 10, 30));
 
-        btnSalir = new JButton("SALIR");
+        btnSalir = new JButton("REGRESAR");
         btnLimpiar = new JButton("LIMPIAR");
         btnLimpiar.addActionListener(e -> btnLimpiar());
         btnCaclular = new JButton("CALCULAR");
@@ -401,7 +401,7 @@ public class PanelPotencia extends JPanel{
             try {
                 vIinicial[i] = Double.parseDouble(txtVectorInicial[i].getText());
             }catch (Exception e){
-                JOptionPane.showMessageDialog(null,"Datos incorrectos intente de nuevo");
+                JOptionPane.showMessageDialog(null,"Datos incorrectos, intente de nuevo");
                 limpiarVectorInicial();
                 return null;
             }

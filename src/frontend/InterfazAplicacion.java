@@ -122,7 +122,7 @@ public class InterfazAplicacion extends JFrame {
                 metodoSeleccionado = POTENCIA_INVERSA;
                 break;
             default:
-                JOptionPane.showMessageDialog(null,"ERROR INTENTE DE NUEVO");
+                JOptionPane.showMessageDialog(null,"ERROR, INTENTE DE NUEVO");
                 break;
         }
 

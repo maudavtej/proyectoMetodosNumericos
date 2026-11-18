@@ -3,7 +3,7 @@ package Raices;
 public class Ejemplo3 extends Funcion {
 
     private String funcion1= "f(x)= 3x-e^x";
-    private String derivada = "f'(x)=2-e^x";
+    private String derivada = "f'(x)=3-e^x";
 
     @Override
     public String getFuncionStr() {
@@ -19,14 +19,14 @@ public class Ejemplo3 extends Funcion {
     }
     @Override
     public double calcularValorDerivada(double a){
-        return 2-Math.exp(a);
+        return 3-Math.exp(a);
     }
 
     public static String toStringFunc(){
         return "f(x) = 3x - e<sup>x</sup>";
     }
     public static String toStringDer(){
-        return "f′(x) = 2 - e<sup>-x</sup>";
+        return "f′(x) = 3 - e<sup>-x</sup>";
     }
 
 }

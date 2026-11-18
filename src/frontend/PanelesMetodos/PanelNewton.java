@@ -146,7 +146,7 @@ public class PanelNewton extends JPanel{
         panelOpciones.setBorder(BorderFactory.createEmptyBorder(10, 30, 10, 30));
 
         btnBorrar = new JButton("BORRAR");
-        btnSalir = new JButton("SALIR");
+        btnSalir = new JButton("REGRESAR");
 
         btnBorrar.addActionListener(e -> btnBorrarAction());
 
@@ -157,7 +157,7 @@ public class PanelNewton extends JPanel{
         panelSolucion.setBackground(new Color(233,235,240));
         panelSolucion.setBorder(BorderFactory.createEmptyBorder(20, 50, 20, 50));
 
-        lbSolucion = new JLabel("Solucion: ");
+        lbSolucion = new JLabel("Solución: ");
         txtSolucion = new JTextArea("");
         txtSolucion.setFocusable(false); // quita el cursor parpadeante
         txtSolucion.setLineWrap(true);//Ajusta automaticamente el texto al ancho disponible
@@ -199,9 +199,9 @@ public class PanelNewton extends JPanel{
     public void btnSeleccionarAction(String funciones[]){
         int itemSeleccionado = cbEjemplos.getSelectedIndex();
         if (itemSeleccionado > 0 && itemSeleccionado <= funciones.length){
-            lbDescripcion.setText("<html>-Solucion de "+funciones[itemSeleccionado - 1]+" por el metodo de biseccion, ingrese valores para continuar: </html>");
+            lbDescripcion.setText("<html> Solución de "+funciones[itemSeleccionado - 1]+" por el método de bisección, ingrese valores para continuar: </html>");
         }else{
-            lbDescripcion.setText("-Ingrese una opcion valida");
+            lbDescripcion.setText(" Ingrese una opción válida");
         }
     }
     public void btnCalcularAction(){
@@ -214,7 +214,7 @@ public class PanelNewton extends JPanel{
         try {
             valorInicial = Integer.parseInt(txtValorInicial.getText());
         }catch(NumberFormatException e){
-            JOptionPane.showMessageDialog(null,"Ingrese un numero valido.");
+            JOptionPane.showMessageDialog(null,"Ingrese un número válido.");
             txtValorInicial.setText("");
             return;
         }

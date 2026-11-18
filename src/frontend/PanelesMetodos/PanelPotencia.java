@@ -1,13 +1,9 @@
 package frontend.PanelesMetodos;
 
-import Matrices.Matriz;
 import Raices.*;
-import Unidad4.Doolittle;
 import Unidad5.Potencia;
-
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
-import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 
 public class PanelPotencia extends JPanel{
@@ -291,6 +287,9 @@ public class PanelPotencia extends JPanel{
             }
             txtVectorInicial[i].setText("1");
         }
+        txtValorPropioDom.setText("");
+        txtIteraciones.setText("");
+        txtVectorPropio.setText("");
     }
     private void btnCalcular() {
         String[] resultadoStr = new String[n];
@@ -318,12 +317,30 @@ public class PanelPotencia extends JPanel{
 
     private void actualizarPanelSistema(int n) {
         panelSistema.removeAll();
-        panelSistema.setLayout(new GridLayout(n, 1, 0, 10));
+        panelSistema.setLayout(new GridLayout(n + 1, 1, 0, 10));
+
+        JLabel[] lbFilas = new JLabel[n];
+        JTextField[] txtColumas = new JTextField[n];
+
+        JPanel fila;
+        fila = new JPanel();
+        for(int i = 0; i < n; i++){
+            fila.setLayout(new FlowLayout(FlowLayout.CENTER, 50, 0));
+            fila.setBackground(new Color(233, 235, 240));
+            txtColumas[i] = new JTextField();
+            txtColumas[i].setText("a"+String.valueOf(i + 1));
+            txtColumas[i].setEditable(false);
+            txtColumas[i].setFocusable(false);
+            fila.add(txtColumas[i]);
+        }
+        panelSistema.add(fila);
 
         for (int i = 0; i < n; i++) {
-            JPanel fila = new JPanel();
+            fila = new JPanel();
             fila.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 0));
             fila.setBackground(new Color(233, 235, 240));
+            lbFilas[i] = new JLabel("Fila "+ String.valueOf(i + 1));
+            fila.add(lbFilas[i]);
             for (int j = 0; j < n; j++) {
                 txtSistemaCompleto[i][j].setPreferredSize(new Dimension(15, 20));
                 fila.add(txtSistemaCompleto[i][j]);
@@ -356,7 +373,7 @@ public class PanelPotencia extends JPanel{
         }
         vectorStr.append(")");
         String resultado = vectorStr.toString();
-        
+
         txtIteraciones.setText(String.valueOf(iteracioens));
         txtValorPropioDom.setText(String.format("%.4f",valorPropioDom));
         txtVectorPropio.setText(resultado);
@@ -395,6 +412,8 @@ public class PanelPotencia extends JPanel{
         for(int i = 0; i < n; i++){
             txtVectorInicial[i].setText("1");
         }
+        txtVectorPropio.setText("");
+        txtIteraciones.setText("");
+        txtValorPropioDom.setText("");
     }
 }
-

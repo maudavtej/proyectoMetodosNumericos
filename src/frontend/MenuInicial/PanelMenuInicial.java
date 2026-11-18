@@ -1,5 +1,7 @@
     package frontend.MenuInicial;
 
+    import com.sun.security.auth.module.JndiLoginModule;
+
     import java.awt.*;
     import javax.swing.*;
     import javax.swing.border.TitledBorder;
@@ -17,7 +19,7 @@
         private JLabel lbGrupo;
         //Panel botones
         private JButton btnContinuar;
-        private final static String CONTINUAR = "CONTINUAR";
+        private JButton btnSalir;
 
         public PanelMenuInicial(){
             setLayout(new BorderLayout());
@@ -118,6 +120,8 @@
             panelDescripcion.add(cuerpoDesc, BorderLayout.CENTER);
 
             /*PANEL BOTON*/
+            btnSalir = new JButton("SALIR");
+            panelBoton.add(btnSalir);
             btnContinuar = new JButton("CONTINUAR");
             panelBoton.add(btnContinuar);
             panelBoton.setBackground(new Color(233,235,240));
@@ -129,14 +133,15 @@
             panelInfo.setPreferredSize(new Dimension(800, 130));
             panelInfo.setMaximumSize(new Dimension(Integer.MAX_VALUE, 130));
 
-            panelDescripcion.setPreferredSize(new Dimension(800, 350));
+            panelDescripcion.setPreferredSize(new Dimension(800, 407));
             panelDescripcion.setMaximumSize(new Dimension(Integer.MAX_VALUE, Integer.MAX_VALUE));
 
-            panelBoton.setPreferredSize(new Dimension(800, 129));
-            panelBoton.setMaximumSize(new Dimension(Integer.MAX_VALUE, 129));
+            panelBoton.setPreferredSize(new Dimension(800, 70));
+            panelBoton.setMaximumSize(new Dimension(Integer.MAX_VALUE, 70));
         }
 
         public JButton getBtnContinuar() {
             return btnContinuar;
         }
+        public JButton getBtnSalir(){return btnSalir;}
     }

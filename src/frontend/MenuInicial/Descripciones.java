@@ -103,7 +103,8 @@ public class Descripciones {
             "El método de Gauss-Seidel es un método numérico iterativo utilizado para encontrar soluciones " +
                     "aproximadas de sistemas de ecuaciones lineales. A diferencia del método de eliminación de Gauss, que " +
                     "obtiene la solución mediante operaciones entre filas, Gauss-Seidel utiliza aproximaciones sucesivas para " +
-                    "calcular el valor de las incógnitas.\n" +
+                    "calcular el valor de las incógnitas.\nLa matriz aumentada debe ser ESTRICTAMENTE DOMINANTE, es decir que los valores de la diagonal deben ser mayores que la suma de los demás " +
+                    "términos en valor absoluto, para garantizar convergencia." +
                     "Su funcionamiento consiste en despejar cada variable del sistema y calcular nuevos valores utilizando las " +
                     "aproximaciones más recientes disponibles. Este proceso se repite hasta que los resultados alcanzan una " +
                     "precisión o tolerancia previamente establecida.\n" +
@@ -128,7 +129,8 @@ public class Descripciones {
 
     private static final String DESCRIPCION_JACOBI =
             "El método de Jacobi es un método numérico iterativo utilizado para encontrar soluciones aproximadas de " +
-                    "sistemas de ecuaciones lineales. Su funcionamiento consiste en despejar las incógnitas de un sistema y " +
+                    "sistemas de ecuaciones lineales. La matriz aumentada debe ser ESTRICTAMENTE DOMINANTE, es decir que los valores de la diagonal deben ser mayores que la suma de los demás " +
+                    "términos en valor absoluto, para garantizar convergencia."+" Su funcionamiento consiste en despejar las incógnitas de un sistema y " +
                     "calcular sus valores mediante aproximaciones sucesivas, repitiendo el procedimiento hasta alcanzar una " +
                     "precisión o tolerancia previamente establecida.\n" +
                     "A diferencia del método de Gauss-Seidel, el método de Jacobi utiliza exclusivamente los valores de la " +

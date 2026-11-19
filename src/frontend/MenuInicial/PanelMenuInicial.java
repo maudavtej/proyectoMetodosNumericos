@@ -70,7 +70,7 @@ public class PanelMenuInicial extends JPanel {
         lbGrupo = new JLabel("Grupo: 1355");
 
         panelInfo.setLayout(new BoxLayout(panelInfo, BoxLayout.Y_AXIS));
-        panelInfo.setBackground(new Color(255, 255, 255));
+        panelInfo.setBackground(new Color(233,235,240));
         panelInfo.setBorder(BorderFactory.createEmptyBorder(0, 30, 0, 0));
 
         JLabel[] etiquetas = {lbNombreUniversidad, lbNombreProfesor, lbGrupo,
@@ -87,7 +87,7 @@ public class PanelMenuInicial extends JPanel {
 
         /*PANEL DESCRIPCION*/
         panelDescripcion.setLayout(new BorderLayout());
-        panelDescripcion.setBackground(new Color(255, 255, 255));
+        panelDescripcion.setBackground(new Color(233,235,240));
         panelDescripcion.setBorder(BorderFactory.createEmptyBorder(5, 40, 15, 40));
 
         JTextArea tituloDesc = new JTextArea("Introducción a los métodos numéricos");
@@ -134,6 +134,7 @@ public class PanelMenuInicial extends JPanel {
         btnContinuar = new JButton("CONTINUAR");
         panelBoton.add(btnContinuar);
         panelBoton.setBackground(new Color(233,235,240));
+        panelBoton.setBorder(BorderFactory.createEmptyBorder(15, 30, 15, 30));
 
         panelTitulo.setPreferredSize(new Dimension(800, 90));
         panelBoton.setPreferredSize(new Dimension(800, 70));

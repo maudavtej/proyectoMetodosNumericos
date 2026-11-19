@@ -81,7 +81,7 @@ public class PanelDescripciones extends JPanel{
         txtDescripcionMetodo.setWrapStyleWord(true);//Evita cortar palabras a la mitad
         txtDescripcionMetodo.setEditable(false);
         txtDescripcionMetodo.setOpaque(false);//Hace transparente el fondo
-        txtDescripcionMetodo.setFont(new Font("ARIAL",Font.PLAIN,13));
+        txtDescripcionMetodo.setFont(new Font("ARIAL",Font.PLAIN,14));
 
         panelDescripcion.add(txtSubtitulo, BorderLayout.NORTH);
         panelDescripcion.add(txtDescripcionMetodo, BorderLayout.CENTER);
@@ -109,11 +109,11 @@ public class PanelDescripciones extends JPanel{
         panelDescripcion.setPreferredSize(new Dimension(800, 450));
         panelDescripcion.setMaximumSize(new Dimension(Integer.MAX_VALUE, Integer.MAX_VALUE));
 
-        panelBoton.setPreferredSize(new Dimension(800, 80));
+        panelBoton.setPreferredSize(new Dimension(800, 50));
         panelBoton.setMaximumSize(new Dimension(Integer.MAX_VALUE, 80));
 
-        panelNavegacion.setPreferredSize(new Dimension(800,79));
-        panelBoton.setMaximumSize(new Dimension(Integer.MAX_VALUE, 79));
+        panelNavegacion.setPreferredSize(new Dimension(800,50));
+        panelNavegacion.setMaximumSize(new Dimension(Integer.MAX_VALUE, 50));
 
         //Aciones de los botones
         btnSiguiente.addActionListener(e -> btnSiguienteAction());

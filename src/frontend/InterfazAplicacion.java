@@ -42,7 +42,7 @@ public class InterfazAplicacion extends JFrame {
 
     public InterfazAplicacion(){
         setTitle("Metodos Numericos I");
-        setSize(800,700);
+        setSize(900,700);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setResizable(false);

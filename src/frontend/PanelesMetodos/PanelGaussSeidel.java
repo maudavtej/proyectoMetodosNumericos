@@ -172,7 +172,7 @@ public class PanelGaussSeidel extends JPanel {
         panelTabla.setPreferredSize(new Dimension(800, 359));
         panelTabla.setMaximumSize(new Dimension(Integer.MAX_VALUE, Integer.MAX_VALUE));
 
-        panelPiePag.setPreferredSize(new Dimension(800, 160));
+        panelPiePag.setPreferredSize(new Dimension(800, 120));
         panelPiePag.setMaximumSize(new Dimension(Integer.MAX_VALUE, 160));
     }
 

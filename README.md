@@ -20,4 +20,4 @@ Los métodos desarrollados se dividen en 3 apartados
 - Método Cholesky
 - Método Doolittle
 
-
+# NOTA: CONSULTE LA GUÍA COMPLETA DEL PROGRAMA DESARROLLADO EN EL APARTADO DE WIKI, QUE SE ENCUENTRA EN EL PANEL SUPERIOR DEL REPOSITORIO
